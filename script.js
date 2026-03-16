@@ -13,6 +13,15 @@ const cheatsheetView = document.getElementById("cheatsheetView");
 const homeTopicGrid = document.getElementById("home-topic-grid");
 const sidebar = document.querySelector(".sidebar");
 
+// Modal Elements
+const cmdModal = document.getElementById('cmdModal');
+const modalCmd = document.getElementById('modalCmd');
+const modalDesc = document.getElementById('modalDesc');
+const modalDetails = document.getElementById('modalDetails');
+const modalExampleCode = document.getElementById('modalExampleCode');
+const modalExampleSection = document.getElementById('modalExampleSection');
+const modalDetailsBox = document.getElementById('modalDetailsBox');
+
 // Set current year in footer
 document.getElementById('year').innerText = new Date().getFullYear();
 
@@ -158,14 +167,21 @@ function renderContent(query = "") {
 
     const div = document.createElement("div");
     div.className = "section";
-    div.innerHTML = `<h2>${section}</h2>`;
+    
+    const h2 = document.createElement("h2");
+    h2.innerText = section;
+    div.appendChild(h2);
 
     filtered.forEach((c) => {
-      div.innerHTML += `
-        <div class="command">
-          <span class="code">${escapeHTML(c.cmd)}</span>
-          <span>${escapeHTML(c.desc)}</span>
-        </div>`;
+      const cmdRow = document.createElement("div");
+      cmdRow.className = "command";
+      cmdRow.onclick = () => openModal(c);
+      
+      cmdRow.innerHTML = `
+        <span class="code">${escapeHTML(c.cmd)}</span>
+        <span>${escapeHTML(c.desc)}</span>
+      `;
+      div.appendChild(cmdRow);
     });
 
     content.appendChild(div);
@@ -173,6 +189,50 @@ function renderContent(query = "") {
 
   if (!hasResults && query !== "") {
     content.innerHTML = '<div class="loading-text">No matching shortcuts found.</div>';
+  }
+}
+
+// Modal Functions
+function openModal(c) {
+  modalCmd.innerHTML = escapeHTML(c.cmd);
+  modalDesc.innerHTML = escapeHTML(c.desc);
+  
+  const hasDetails = c.details || c.example;
+  
+  if (hasDetails) {
+    modalDetailsBox.style.display = 'block';
+    
+    if (c.details) {
+      modalDetails.innerHTML = escapeHTML(c.details);
+      modalDetails.style.display = 'block';
+    } else {
+      modalDetails.style.display = 'none';
+    }
+    
+    if (c.example) {
+      modalExampleSection.style.display = 'block';
+      modalExampleCode.innerHTML = escapeHTML(c.example);
+    } else {
+      modalExampleSection.style.display = 'none';
+    }
+  } else {
+    modalDetailsBox.style.display = 'block';
+    modalDetails.innerHTML = "No detailed example available for this command yet.";
+    modalDetails.style.display = 'block';
+    modalExampleSection.style.display = 'none';
+  }
+  
+  cmdModal.classList.add('show');
+}
+
+function closeModal() {
+  cmdModal.classList.remove('show');
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  if (event.target == cmdModal) {
+    closeModal();
   }
 }
 

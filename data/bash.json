@@ -1,62 +1,282 @@
 {
   "Variables": [
-    { "cmd": "VAR=\"value\"", "desc": "Assign a value to a variable (no spaces)" },
-    { "cmd": "echo $VAR", "desc": "Print the value of a variable" },
-    { "cmd": "readonly VAR=\"val\"", "desc": "Make a variable read-only" },
-    { "cmd": "unset VAR", "desc": "Delete a variable" },
-    { "cmd": "${VAR:-default}", "desc": "Use default if VAR is unset/empty" },
-    { "cmd": "export VAR=\"val\"", "desc": "Export variable to child processes" }
+    { 
+      "cmd": "VAR=\"value\"", 
+      "desc": "Assign a value to a variable (no spaces)", 
+      "details": "Initializes a variable. In Bash, there must be no spaces around the '=' sign.", 
+      "example": "NAME=\"John\"\nAGE=30" 
+    },
+    { 
+      "cmd": "echo $VAR", 
+      "desc": "Print the value of a variable", 
+      "details": "Accesses and displays the value stored in a variable by prefixing its name with '$'.", 
+      "example": "echo $NAME" 
+    },
+    { 
+      "cmd": "readonly VAR=\"val\"", 
+      "desc": "Make a variable read-only", 
+      "details": "Defines a constant variable that cannot be changed or unset later in the script.", 
+      "example": "readonly PI=3.14" 
+    },
+    { 
+      "cmd": "unset VAR", 
+      "desc": "Delete a variable", 
+      "details": "Removes a variable from the current shell execution environment.", 
+      "example": "unset NAME" 
+    },
+    { 
+      "cmd": "${VAR:-default}", 
+      "desc": "Use default if VAR is unset/empty", 
+      "details": "A parameter expansion that provides a fallback value if the variable is null or unset.", 
+      "example": "echo ${USER_ROLE:-guest}" 
+    },
+    { 
+      "cmd": "export VAR=\"val\"", 
+      "desc": "Export variable to child processes", 
+      "details": "Makes the variable available to any child processes (subshells) started from the current shell.", 
+      "example": "export API_KEY=\"secret123\"" 
+    }
   ],
   "Special Variables": [
-    { "cmd": "$0", "desc": "The name of the script" },
-    { "cmd": "$1, $2, ...", "desc": "The first, second, etc. positional arguments" },
-    { "cmd": "$#", "desc": "The total number of arguments passed" },
-    { "cmd": "$@", "desc": "All arguments as a list of strings" },
-    { "cmd": "$?", "desc": "Exit status of the last executed command" },
-    { "cmd": "$$", "desc": "Process ID (PID) of the current script" },
-    { "cmd": "$USER", "desc": "The user running the script" }
+    { 
+      "cmd": "$0", 
+      "desc": "The name of the script", 
+      "details": "Contains the name of the script as it was invoked. Useful for displaying usage information.", 
+      "example": "echo \"Usage: $0 <args>\"" 
+    },
+    { 
+      "cmd": "$1, $2, ...", 
+      "desc": "The first, second, etc. positional arguments", 
+      "details": "Variables that hold the arguments passed to the script or function by their position.", 
+      "example": "echo \"First argument: $1\"" 
+    },
+    { 
+      "cmd": "$#", 
+      "desc": "The total number of arguments passed", 
+      "details": "Expands to the number of positional parameters in decimal.", 
+      "example": "if [ $# -lt 2 ]; then echo \"Need 2 args\"; fi" 
+    },
+    { 
+      "cmd": "$@", 
+      "desc": "All arguments as a list of strings", 
+      "details": "Expands to all positional parameters. When double-quoted, each parameter expands to a separate word.", 
+      "example": "for arg in \"$@\"; do echo \"$arg\"; done" 
+    },
+    { 
+      "cmd": "$?", 
+      "desc": "Exit status of the last executed command", 
+      "details": "Holds the exit status of the most recently executed foreground pipeline (0 for success, non-zero for error).", 
+      "example": "ls /nonexistent; echo $?  # Outputs 2" 
+    },
+    { 
+      "cmd": "$$", 
+      "desc": "Process ID (PID) of the current script", 
+      "details": "The process ID of the current shell. Useful for creating unique temporary files.", 
+      "example": "TEMP_FILE=\"/tmp/script_$$" 
+    },
+    { 
+      "cmd": "$USER", 
+      "desc": "The user running the script", 
+      "details": "Environment variable containing the username of the current user.", 
+      "example": "echo \"Current user: $USER\"" 
+    }
   ],
   "Conditionals": [
-    { "cmd": "if [ <condition> ]; then ... fi", "desc": "Basic if statement" },
-    { "cmd": "if [ <cond> ]; then ... elif [ <cond> ]; then ... else ... fi", "desc": "If/elif/else statement" },
-    { "cmd": "[ -z \"$VAR\" ]", "desc": "True if string is empty" },
-    { "cmd": "[ -n \"$VAR\" ]", "desc": "True if string is not empty" },
-    { "cmd": "[ \"$A\" == \"$B\" ]", "desc": "True if strings are equal" },
-    { "cmd": "[ \"$A\" != \"$B\" ]", "desc": "True if strings are not equal" },
-    { "cmd": "[ $A -eq $B ]", "desc": "True if integers are equal (-ne for not equal)" },
-    { "cmd": "[ $A -gt $B ]", "desc": "True if A > B (-lt for A < B, -ge for >=, -le for <=)" }
+    { 
+      "cmd": "if [ <condition> ]; then ... fi", 
+      "desc": "Basic if statement", 
+      "details": "The classic 'test' command based if-statement. Square brackets are actually a command called '['.", 
+      "example": "if [ $AGE -gt 18 ]; then echo \"Adult\"; fi" 
+    },
+    { 
+      "cmd": "if [ <cond> ]; then ... elif [ <cond> ]; then ... else ... fi", 
+      "desc": "If/elif/else statement", 
+      "details": "Provides multi-branch logic based on multiple conditions.", 
+      "example": "if [ $A -eq $B ]; then ... else ... fi" 
+    },
+    { 
+      "cmd": "[ -z \"$VAR\" ]", 
+      "desc": "True if string is empty", 
+      "details": "Test if the string length is zero. Always quote variables to prevent errors if they are empty.", 
+      "example": "if [ -z \"$NAME\" ]; then echo \"Empty\"; fi" 
+    },
+    { 
+      "cmd": "[ -n \"$VAR\" ]", 
+      "desc": "True if string is not empty", 
+      "details": "Test if the string length is non-zero.", 
+      "example": "if [ -n \"$NAME\" ]; then echo \"Name set\"; fi" 
+    },
+    { 
+      "cmd": "[ \"$A\" == \"$B\" ]", 
+      "desc": "True if strings are equal", 
+      "details": "Performs string equality comparison.", 
+      "example": "if [ \"$STR\" == \"hello\" ]; then ... fi" 
+    },
+    { 
+      "cmd": "[ \"$A\" != \"$B\" ]", 
+      "desc": "True if strings are not equal", 
+      "details": "Performs string inequality comparison.", 
+      "example": "if [ \"$STR\" != \"world\" ]; then ... fi" 
+    },
+    { 
+      "cmd": "[ $A -eq $B ]", 
+      "desc": "True if integers are equal (-ne for not equal)", 
+      "details": "Numeric comparison operator for equality. Use -ne for 'not equal'.", 
+      "example": "if [ 10 -eq 10 ]; then echo \"Equal\"; fi" 
+    },
+    { 
+      "cmd": "[ $A -gt $B ]", 
+      "desc": "True if A > B (-lt for A < B, -ge for >=, -le for <=)", 
+      "details": "Numeric comparison operators: -gt (greater than), -lt (less than), -ge (greater or equal), -le (less or equal).", 
+      "example": "if [ 15 -gt 10 ]; then echo \"Greater\"; fi" 
+    }
   ],
   "File Tests": [
-    { "cmd": "[ -e <file> ]", "desc": "True if file or directory exists" },
-    { "cmd": "[ -f <file> ]", "desc": "True if it is a regular file" },
-    { "cmd": "[ -d <dir> ]", "desc": "True if it is a directory" },
-    { "cmd": "[ -s <file> ]", "desc": "True if file size > 0" },
-    { "cmd": "[ -x <file> ]", "desc": "True if file is executable" }
+    { 
+      "cmd": "[ -e <file> ]", 
+      "desc": "True if file or directory exists", 
+      "details": "Checks for the existence of a file or directory regardless of its type.", 
+      "example": "if [ -e config.json ]; then ... fi" 
+    },
+    { 
+      "cmd": "[ -f <file> ]", 
+      "desc": "True if it is a regular file", 
+      "details": "Checks if the path exists and is a regular file (not a directory or device).", 
+      "example": "if [ -f data.txt ]; then ... fi" 
+    },
+    { 
+      "cmd": "[ -d <dir> ]", 
+      "desc": "True if it is a directory", 
+      "details": "Checks if the path exists and is a directory.", 
+      "example": "if [ -d /etc ]; then ... fi" 
+    },
+    { 
+      "cmd": "[ -s <file> ]", 
+      "desc": "True if file size > 0", 
+      "details": "Checks if the file exists and has a size greater than zero bytes.", 
+      "example": "if [ -s log.txt ]; then ... fi" 
+    },
+    { 
+      "cmd": "[ -x <file> ]", 
+      "desc": "True if file is executable", 
+      "details": "Checks if the file exists and execute permission is granted.", 
+      "example": "if [ -x script.sh ]; then ... fi" 
+    }
   ],
   "Loops": [
-    { "cmd": "for i in {1..5}; do ... done", "desc": "For loop over a range of numbers" },
-    { "cmd": "for file in *.txt; do ... done", "desc": "For loop over files in a directory" },
-    { "cmd": "while [ <cond> ]; do ... done", "desc": "While loop" },
-    { "cmd": "until [ <cond> ]; do ... done", "desc": "Until loop (runs until condition is true)" },
-    { "cmd": "break", "desc": "Exit the loop" },
-    { "cmd": "continue", "desc": "Skip the rest of the loop iteration" }
+    { 
+      "cmd": "for i in {1..5}; do ... done", 
+      "desc": "For loop over a range of numbers", 
+      "details": "Iterates through a sequence of numbers generated by brace expansion.", 
+      "example": "for i in {1..5}; do echo $i; done" 
+    },
+    { 
+      "cmd": "for file in *.txt; do ... done", 
+      "desc": "For loop over files in a directory", 
+      "details": "Uses globbing to iterate over all files matching the pattern.", 
+      "example": "for f in *.log; do mv \"$f\" \"$f.bak\"; done" 
+    },
+    { 
+      "cmd": "while [ <cond> ]; do ... done", 
+      "desc": "While loop", 
+      "details": "Executes the loop body as long as the condition remains true.", 
+      "example": "while [ $count -gt 0 ]; do ((count--)); done" 
+    },
+    { 
+      "cmd": "until [ <cond> ]; do ... done", 
+      "desc": "Until loop (runs until condition is true)", 
+      "details": "Executes the loop body as long as the condition is false, stopping once it becomes true.", 
+      "example": "until [ $count -eq 10 ]; do ((count++)); done" 
+    },
+    { 
+      "cmd": "break", 
+      "desc": "Exit the loop", 
+      "details": "Immediately terminates the innermost loop and transfers control to the statement following the loop.", 
+      "example": "if [ $x -eq 5 ]; then break; fi" 
+    },
+    { 
+      "cmd": "continue", 
+      "desc": "Skip the rest of the loop iteration", 
+      "details": "Skips the remaining commands in the current loop iteration and starts the next one.", 
+      "example": "if [ -d \"$item\" ]; then continue; fi" 
+    }
   ],
   "Functions": [
-    { "cmd": "myfunc() { ... }", "desc": "Define a function" },
-    { "cmd": "function myfunc { ... }", "desc": "Define a function (alternative syntax)" },
-    { "cmd": "myfunc arg1 arg2", "desc": "Call a function with arguments" },
-    { "cmd": "return 0", "desc": "Return from a function (exit code 0-255)" }
+    { 
+      "cmd": "myfunc() { ... }", 
+      "desc": "Define a function", 
+      "details": "The standard way to define a function in POSIX-compliant shells and Bash.", 
+      "example": "hello() { echo \"Hi $1\"; }" 
+    },
+    { 
+      "cmd": "function myfunc { ... }", 
+      "desc": "Define a function (alternative syntax)", 
+      "details": "Bash-specific syntax for defining functions. Does not require parentheses if 'function' keyword is used.", 
+      "example": "function greet { echo \"Hello\"; }" 
+    },
+    { 
+      "cmd": "myfunc arg1 arg2", 
+      "desc": "Call a function with arguments", 
+      "details": "Functions are called like commands, and arguments are passed as positional parameters $1, $2, etc.", 
+      "example": "hello \"Alice\"" 
+    },
+    { 
+      "cmd": "return 0", 
+      "desc": "Return from a function (exit code 0-255)", 
+      "details": "Terminates the function and returns the specified exit status to the caller. 0 typically means success.", 
+      "example": "is_valid() { return 0; }" 
+    }
   ],
   "Arrays": [
-    { "cmd": "arr=(a b c)", "desc": "Define an array" },
-    { "cmd": "echo ${arr[0]}", "desc": "Access the first element" },
-    { "cmd": "echo ${arr[@]}", "desc": "Access all elements" },
-    { "cmd": "echo ${#arr[@]}", "desc": "Get the length of the array" },
-    { "cmd": "arr+=(d)", "desc": "Append an element to the array" }
+    { 
+      "cmd": "arr=(a b c)", 
+      "desc": "Define an array", 
+      "details": "Initializes a Bash array with multiple elements.", 
+      "example": "colors=(\"red\" \"green\" \"blue\")" 
+    },
+    { 
+      "cmd": "echo ${arr[0]}", 
+      "desc": "Access the first element", 
+      "details": "Retrieves the element at the specified index. Bash arrays are zero-indexed.", 
+      "example": "echo ${colors[0]}" 
+    },
+    { 
+      "cmd": "echo ${arr[@]}", 
+      "desc": "Access all elements", 
+      "details": "Expands to all elements in the array. Quoting \"${arr[@]}\" preserves spaces within elements.", 
+      "example": "echo \"All: ${colors[@]}\"" 
+    },
+    { 
+      "cmd": "echo ${#arr[@]}", 
+      "desc": "Get the length of the array", 
+      "details": "Expands to the number of elements in the array.", 
+      "example": "echo \"Size: ${#colors[@]}\"" 
+    },
+    { 
+      "cmd": "arr+=(d)", 
+      "desc": "Append an element to the array", 
+      "details": "Adds a new element to the end of an existing array.", 
+      "example": "colors+=(\"yellow\")" 
+    }
   ],
   "Arithmetic": [
-    { "cmd": "let RESULT=A+B", "desc": "Perform integer arithmetic" },
-    { "cmd": "$((A + B))", "desc": "Arithmetic expansion (e.g. echo $((5*2)))" },
-    { "cmd": "expr $A + $B", "desc": "Evaluate expression" }
+    { 
+      "cmd": "let RESULT=A+B", 
+      "desc": "Perform integer arithmetic", 
+      "details": "The 'let' command allows arithmetic evaluation on shell variables.", 
+      "example": "let \"SUM = 5 + 5\"" 
+    },
+    { 
+      "cmd": "$((A + B))", 
+      "desc": "Arithmetic expansion (e.g. echo $((5*2)))", 
+      "details": "Preferred modern syntax for integer arithmetic that expands to the result of the calculation.", 
+      "example": "echo $((10 / 2))" 
+    },
+    { 
+      "cmd": "expr $A + $B", 
+      "desc": "Evaluate expression", 
+      "details": "An external utility used for arithmetic in older scripts. Generally slower than built-in expansion.", 
+      "example": "expr 10 + 20" 
+    }
   ]
 }

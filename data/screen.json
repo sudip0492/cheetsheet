@@ -1,46 +1,46 @@
 {
   "Session Management": [
-    { "cmd": "screen", "desc": "Start a new screen session" },
-    { "cmd": "screen -S <name>", "desc": "Start a new named session" },
-    { "cmd": "screen -ls", "desc": "List all running screen sessions" },
-    { "cmd": "screen -r", "desc": "Reattach to a detached session" },
-    { "cmd": "screen -r <name>", "desc": "Reattach to a named session" },
-    { "cmd": "screen -d -r", "desc": "Detach a running session and reattach here" },
-    { "cmd": "Ctrl+a d", "desc": "Detach from the current session" },
-    { "cmd": "Ctrl+a D D", "desc": "Detach and log out" },
-    { "cmd": "exit", "desc": "Kill the current screen session" }
+    { "cmd": "screen", "desc": "Start a new screen session", "details": "Creates a new terminal session that can be detached and reattached later.", "example": "screen" },
+    { "cmd": "screen -S <name>", "desc": "Start a new named session", "details": "Starts a new session with a specific label, making it easier to manage multiple sessions.", "example": "screen -S mysession" },
+    { "cmd": "screen -ls", "desc": "List all running screen sessions", "details": "Displays all currently active screen sessions and their status (Attached or Detached).", "example": "screen -ls" },
+    { "cmd": "screen -r", "desc": "Reattach to a detached session", "details": "Reconnects to a session that was previously detached.", "example": "screen -r" },
+    { "cmd": "screen -r <name>", "desc": "Reattach to a named session", "details": "Reconnects to a specific named session that was previously detached.", "example": "screen -r mysession" },
+    { "cmd": "screen -d -r", "desc": "Detach a running session and reattach here", "details": "Forcibly detaches a session from another terminal and reattaches it to the current one.", "example": "screen -d -r mysession" },
+    { "cmd": "Ctrl+a d", "desc": "Detach from the current session", "details": "Disconnects the current terminal from the screen session while keeping the session running.", "example": "Ctrl+a d" },
+    { "cmd": "Ctrl+a D D", "desc": "Detach and log out", "details": "Detaches the session and also logs out the user from the remote server.", "example": "Ctrl+a D D" },
+    { "cmd": "exit", "desc": "Kill the current screen session", "details": "Exits the shell within the screen session; if it's the last window, the session terminates.", "example": "exit" }
   ],
   "Windows": [
-    { "cmd": "Ctrl+a c", "desc": "Create a new window" },
-    { "cmd": "Ctrl+a n", "desc": "Switch to the next window" },
-    { "cmd": "Ctrl+a p", "desc": "Switch to the previous window" },
-    { "cmd": "Ctrl+a <0-9>", "desc": "Switch to a window by number (0-9)" },
-    { "cmd": "Ctrl+a '", "desc": "Prompt for a window name or number to switch to" },
-    { "cmd": "Ctrl+a A", "desc": "Rename the current window" },
-    { "cmd": "Ctrl+a w", "desc": "List all windows (displayed in the status bar)" },
-    { "cmd": "Ctrl+a \"", "desc": "Show an interactive window list" },
-    { "cmd": "Ctrl+a k", "desc": "Kill the current window" },
-    { "cmd": "Ctrl+a \\", "desc": "Kill all windows and terminate the session" }
+    { "cmd": "Ctrl+a c", "desc": "Create a new window", "details": "Opens a new virtual terminal window within the current screen session.", "example": "Ctrl+a c" },
+    { "cmd": "Ctrl+a n", "desc": "Switch to the next window", "details": "Moves the focus to the next window in the list.", "example": "Ctrl+a n" },
+    { "cmd": "Ctrl+a p", "desc": "Switch to the previous window", "details": "Moves the focus to the previous window in the list.", "example": "Ctrl+a p" },
+    { "cmd": "Ctrl+a <0-9>", "desc": "Switch to a window by number (0-9)", "details": "Directly jumps to the window with the corresponding index.", "example": "Ctrl+a 0" },
+    { "cmd": "Ctrl+a '", "desc": "Prompt for a window name or number to switch to", "details": "Opens a prompt where you can type the name or index of the window you want to switch to.", "example": "Ctrl+a '" },
+    { "cmd": "Ctrl+a A", "desc": "Rename the current window", "details": "Allows you to change the title of the current window for easier identification.", "example": "Ctrl+a A" },
+    { "cmd": "Ctrl+a w", "desc": "List all windows (displayed in the status bar)", "details": "Shows a list of all active windows in the bottom status line.", "example": "Ctrl+a w" },
+    { "cmd": "Ctrl+a \"", "desc": "Show an interactive window list", "details": "Opens a full-screen interactive menu to select a window from the list.", "example": "Ctrl+a \"" },
+    { "cmd": "Ctrl+a k", "desc": "Kill the current window", "details": "Closes the currently active window after a confirmation prompt.", "example": "Ctrl+a k" },
+    { "cmd": "Ctrl+a \\", "desc": "Kill all windows and terminate the session", "details": "Immediately terminates all windows and ends the entire screen session.", "example": "Ctrl+a \\" }
   ],
   "Regions (Splits)": [
-    { "cmd": "Ctrl+a S", "desc": "Split the current region horizontally" },
-    { "cmd": "Ctrl+a |", "desc": "Split the current region vertically" },
-    { "cmd": "Ctrl+a Tab", "desc": "Switch input focus to the next region" },
-    { "cmd": "Ctrl+a X", "desc": "Close the current region" },
-    { "cmd": "Ctrl+a Q", "desc": "Close all regions except the current one" }
+    { "cmd": "Ctrl+a S", "desc": "Split the current region horizontally", "details": "Divides the current display area into two horizontal regions.", "example": "Ctrl+a S" },
+    { "cmd": "Ctrl+a |", "desc": "Split the current region vertically", "details": "Divides the current display area into two vertical regions.", "example": "Ctrl+a |" },
+    { "cmd": "Ctrl+a Tab", "desc": "Switch input focus to the next region", "details": "Moves the cursor and focus to the next available region on the screen.", "example": "Ctrl+a Tab" },
+    { "cmd": "Ctrl+a X", "desc": "Close the current region", "details": "Removes the currently focused region from the display (does not kill the window).", "example": "Ctrl+a X" },
+    { "cmd": "Ctrl+a Q", "desc": "Close all regions except the current one", "details": "Removes all other regions, making the current region fill the entire screen.", "example": "Ctrl+a Q" }
   ],
   "Copy Mode": [
-    { "cmd": "Ctrl+a [", "desc": "Enter copy/scrollback mode" },
-    { "cmd": "Space", "desc": "Start a selection in copy mode" },
-    { "cmd": "Enter", "desc": "End selection and copy text" },
-    { "cmd": "Ctrl+a ]", "desc": "Paste copied text" },
-    { "cmd": "Ctrl+u", "desc": "Scroll the page up" },
-    { "cmd": "Ctrl+d", "desc": "Scroll the page down" }
+    { "cmd": "Ctrl+a [", "desc": "Enter copy/scrollback mode", "details": "Allows you to scroll back through the terminal history and select text.", "example": "Ctrl+a [" },
+    { "cmd": "Space", "desc": "Start a selection in copy mode", "details": "Begins marking text for copying from the current cursor position.", "example": "Space" },
+    { "cmd": "Enter", "desc": "End selection and copy text", "details": "Copies the marked text into the screen buffer and exits copy mode.", "example": "Enter" },
+    { "cmd": "Ctrl+a ]", "desc": "Paste copied text", "details": "Inserts the content of the screen buffer into the current window.", "example": "Ctrl+a ]" },
+    { "cmd": "Ctrl+u", "desc": "Scroll the page up", "details": "Moves the view one page up in copy/scrollback mode.", "example": "Ctrl+u" },
+    { "cmd": "Ctrl+d", "desc": "Scroll the page down", "details": "Moves the view one page down in copy/scrollback mode.", "example": "Ctrl+d" }
   ],
   "Miscellaneous": [
-    { "cmd": "Ctrl+a ?", "desc": "Show help and key bindings" },
-    { "cmd": "Ctrl+a Ctrl+a", "desc": "Toggle between current and previous windows" },
-    { "cmd": "Ctrl+a :", "desc": "Enter the screen command prompt" },
-    { "cmd": "Ctrl+a H", "desc": "Toggle logging the current window to a file" }
+    { "cmd": "Ctrl+a ?", "desc": "Show help and key bindings", "details": "Displays a comprehensive list of screen commands and their associated key bindings.", "example": "Ctrl+a ?" },
+    { "cmd": "Ctrl+a Ctrl+a", "desc": "Toggle between current and previous windows", "details": "Quickly switches back and forth between the two most recently used windows.", "example": "Ctrl+a Ctrl+a" },
+    { "cmd": "Ctrl+a :", "desc": "Enter the screen command prompt", "details": "Opens a prompt at the bottom of the screen for entering internal screen commands.", "example": "Ctrl+a :" },
+    { "cmd": "Ctrl+a H", "desc": "Toggle logging the current window to a file", "details": "Starts or stops writing the output of the current window to a file named 'screenlog.n'.", "example": "Ctrl+a H" }
   ]
 }

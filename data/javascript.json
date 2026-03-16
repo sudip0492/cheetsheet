@@ -1,49 +1,49 @@
 {
   "Variables": [
-    { "cmd": "let <name> = <val>", "desc": "Block-scoped variable" },
-    { "cmd": "const <name> = <val>", "desc": "Block-scoped constant" },
-    { "cmd": "var <name> = <val>", "desc": "Function-scoped variable (legacy)" }
+    { "cmd": "let <name> = <val>", "desc": "Block-scoped variable", "details": "Declares a reassignable, block-scoped local variable, optionally initializing it to a value.", "example": "let count = 0;" },
+    { "cmd": "const <name> = <val>", "desc": "Block-scoped constant", "details": "Declares a block-scoped local variable whose value cannot be reassigned after initialization.", "example": "const PI = 3.14159;" },
+    { "cmd": "var <name> = <val>", "desc": "Function-scoped variable (legacy)", "details": "Declares a function-scoped or globally-scoped variable, optionally initializing it to a value. Generally avoided in modern JS due to hoisting issues.", "example": "var name = 'Bob';" }
   ],
   "Functions": [
-    { "cmd": "function <name>() {}", "desc": "Function declaration" },
-    { "cmd": "const <name> = () => {}", "desc": "Arrow function" },
-    { "cmd": "(function() {})();", "desc": "Immediately Invoked Function (IIFE)" }
+    { "cmd": "function <name>() {}", "desc": "Function declaration", "details": "Declares a function with specified parameters and a body. Declarations are hoisted to the top of their scope.", "example": "function greet(name) { return `Hello ${name}`; }" },
+    { "cmd": "const <name> = () => {}", "desc": "Arrow function", "details": "A compact alternative to a traditional function expression. Arrow functions do not have their own 'this' or 'arguments' bindings.", "example": "const add = (a, b) => a + b;" },
+    { "cmd": "(function() {})();", "desc": "Immediately Invoked Function (IIFE)", "details": "A function that runs as soon as it is defined. Often used to create a private scope.", "example": "(function() { console.log('I run immediately!'); })();" }
   ],
   "Arrays": [
-    { "cmd": "arr.push(<val>)", "desc": "Add item to end of array" },
-    { "cmd": "arr.pop()", "desc": "Remove and return last item" },
-    { "cmd": "arr.shift()", "desc": "Remove and return first item" },
-    { "cmd": "arr.unshift(<val>)", "desc": "Add item to beginning of array" },
-    { "cmd": "arr.map(fn)", "desc": "Create a new array with results of calling a function" },
-    { "cmd": "arr.filter(fn)", "desc": "Create a new array with elements that pass the test" },
-    { "cmd": "arr.reduce(fn, init)", "desc": "Reduce the array to a single value" },
-    { "cmd": "arr.find(fn)", "desc": "Return the first element that satisfies the test" },
-    { "cmd": "arr.includes(<val>)", "desc": "Determine whether an array includes a certain value" }
+    { "cmd": "arr.push(<val>)", "desc": "Add item to end of array", "details": "Appends one or more elements to the end of an array and returns the new length of the array.", "example": "const fruits = ['apple']; fruits.push('banana');" },
+    { "cmd": "arr.pop()", "desc": "Remove and return last item", "details": "Removes the last element from an array and returns that element. This method changes the length of the array.", "example": "const last = fruits.pop();" },
+    { "cmd": "arr.shift()", "desc": "Remove and return first item", "details": "Removes the first element from an array and returns that removed element. This method changes the length of the array.", "example": "const first = fruits.shift();" },
+    { "cmd": "arr.unshift(<val>)", "desc": "Add item to beginning of array", "details": "Adds one or more elements to the beginning of an array and returns the new length of the array.", "example": "fruits.unshift('strawberry');" },
+    { "cmd": "arr.map(fn)", "desc": "Create a new array with results of calling a function", "details": "Creates a new array populated with the results of calling a provided function on every element in the calling array.", "example": "const doubled = numbers.map(x => x * 2);" },
+    { "cmd": "arr.filter(fn)", "desc": "Create a new array with elements that pass the test", "details": "Creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.", "example": "const evens = numbers.filter(x => x % 2 === 0);" },
+    { "cmd": "arr.reduce(fn, init)", "desc": "Reduce the array to a single value", "details": "Executes a user-supplied 'reducer' callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element.", "example": "const sum = numbers.reduce((acc, curr) => acc + curr, 0);" },
+    { "cmd": "arr.find(fn)", "desc": "Return the first element that satisfies the test", "details": "Returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.", "example": "const user = users.find(u => u.id === 1);" },
+    { "cmd": "arr.includes(<val>)", "desc": "Determine whether an array includes a certain value", "details": "Determines whether an array includes a certain value among its entries, returning true or false as appropriate.", "example": "const hasApple = fruits.includes('apple');" }
   ],
   "Objects": [
-    { "cmd": "Object.keys(obj)", "desc": "Return an array of a given object's property names" },
-    { "cmd": "Object.values(obj)", "desc": "Return an array of a given object's property values" },
-    { "cmd": "Object.entries(obj)", "desc": "Return an array of a given object's [key, value] pairs" },
-    { "cmd": "Object.assign(t, s)", "desc": "Copy values of all enumerable properties from source to target" },
-    { "cmd": "{...obj}", "desc": "Spread operator to copy/merge objects" }
+    { "cmd": "Object.keys(obj)", "desc": "Return an array of a given object's property names", "details": "Returns an array of a given object's own enumerable string-keyed property names.", "example": "const keys = Object.keys({ name: 'Alice', age: 25 }); // ['name', 'age']" },
+    { "cmd": "Object.values(obj)", "desc": "Return an array of a given object's property values", "details": "Returns an array of a given object's own enumerable string-keyed property values.", "example": "const values = Object.values({ a: 1, b: 2 }); // [1, 2]" },
+    { "cmd": "Object.entries(obj)", "desc": "Return an array of a given object's [key, value] pairs", "details": "Returns an array of a given object's own enumerable string-keyed property [key, value] pairs.", "example": "for (const [key, val] of Object.entries(obj)) { ... }" },
+    { "cmd": "Object.assign(t, s)", "desc": "Copy values of all enumerable properties from source to target", "details": "Copies all enumerable own properties from one or more source objects to a target object. It returns the modified target object.", "example": "Object.assign(target, source1, source2);" },
+    { "cmd": "{...obj}", "desc": "Spread operator to copy/merge objects", "details": "Allows an iterable such as an object expression or array to be expanded in places where zero or more arguments or elements are expected.", "example": "const newObj = { ...oldObj, newKey: 'newValue' };" }
   ],
   "Promises & Async": [
-    { "cmd": "new Promise((res, rej) => {})", "desc": "Create a new promise" },
-    { "cmd": "promise.then(fn).catch(fn)", "desc": "Handle promise resolution and rejection" },
-    { "cmd": "async function <name>() {}", "desc": "Declare an asynchronous function" },
-    { "cmd": "await <promise>", "desc": "Wait for a promise to resolve (inside async function)" },
-    { "cmd": "Promise.all([p1, p2])", "desc": "Wait for all promises to be resolved" }
+    { "cmd": "new Promise((res, rej) => {})", "desc": "Create a new promise", "details": "Constructs a Promise object which represents the eventual completion (or failure) of an asynchronous operation and its resulting value.", "example": "const p = new Promise((resolve, reject) => { setTimeout(resolve, 1000); });" },
+    { "cmd": "promise.then(fn).catch(fn)", "desc": "Handle promise resolution and rejection", "details": "Schedules functions to be called when the promise is either fulfilled or rejected.", "example": "fetchData().then(data => console.log(data)).catch(err => console.error(err));" },
+    { "cmd": "async function <name>() {}", "desc": "Declare an asynchronous function", "details": "Defines a function that returns a Promise and allows the use of the 'await' keyword inside it.", "example": "async function loadUser() { ... }" },
+    { "cmd": "await <promise>", "desc": "Wait for a promise to resolve (inside async function)", "details": "Pauses the execution of the async function until the Promise is settled (either fulfilled or rejected).", "example": "const data = await response.json();" },
+    { "cmd": "Promise.all([p1, p2])", "desc": "Wait for all promises to be resolved", "details": "Takes an iterable of promises and returns a single Promise that resolves when all of the input promises have resolved.", "example": "const [res1, res2] = await Promise.all([fetch1, fetch2]);" }
   ],
   "DOM Manipulation": [
-    { "cmd": "document.querySelector(sel)", "desc": "Return the first element that matches the selector" },
-    { "cmd": "document.querySelectorAll(sel)", "desc": "Return a static NodeList of elements matching the selector" },
-    { "cmd": "document.getElementById(id)", "desc": "Return the element with the specified ID" },
-    { "cmd": "document.createElement(tag)", "desc": "Create an HTML element" },
-    { "cmd": "el.appendChild(node)", "desc": "Add a node to the end of the list of children of a specified parent" },
-    { "cmd": "el.addEventListener(ev, fn)", "desc": "Attach an event handler to the specified element" }
+    { "cmd": "document.querySelector(sel)", "desc": "Return the first element that matches the selector", "details": "Returns the first Element within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned.", "example": "const main = document.querySelector('#main-content');" },
+    { "cmd": "document.querySelectorAll(sel)", "desc": "Return a static NodeList of elements matching the selector", "details": "Returns a static (not live) NodeList representing a list of the document's elements that match the specified group of selectors.", "example": "const buttons = document.querySelectorAll('button.active');" },
+    { "cmd": "document.getElementById(id)", "desc": "Return the element with the specified ID", "details": "Returns an Element object representing the element whose id property matches the specified string.", "example": "const header = document.getElementById('header');" },
+    { "cmd": "document.createElement(tag)", "desc": "Create an HTML element", "details": "In an HTML document, the document.createElement() method creates the HTML element specified by tagName.", "example": "const div = document.createElement('div');" },
+    { "cmd": "el.appendChild(node)", "desc": "Add a node to the end of the list of children of a specified parent", "details": "Adds a node to the end of the list of children of a specified parent node.", "example": "document.body.appendChild(newParagraph);" },
+    { "cmd": "el.addEventListener(ev, fn)", "desc": "Attach an event handler to the specified element", "details": "Sets up a function that will be called whenever the specified event is delivered to the target.", "example": "btn.addEventListener('click', () => alert('Clicked!'));" }
   ],
   "JSON": [
-    { "cmd": "JSON.parse(str)", "desc": "Parse a JSON string, constructing the JS value or object" },
-    { "cmd": "JSON.stringify(obj)", "desc": "Convert a JS object or value to a JSON string" }
+    { "cmd": "JSON.parse(str)", "desc": "Parse a JSON string, constructing the JS value or object", "details": "Parses a JSON string, constructing the JavaScript value or object described by the string.", "example": "const obj = JSON.parse('{\"a\": 1}');" },
+    { "cmd": "JSON.stringify(obj)", "desc": "Convert a JS object or value to a JSON string", "details": "Converts a JavaScript object or value to a JSON string, optionally replacing values if a replacer function is specified.", "example": "const str = JSON.stringify({ name: 'Alice' });" }
   ]
 }

@@ -1,42 +1,42 @@
 {
   "General": [
-    { "cmd": "Ctrl+Shift+P", "desc": "Open the Command Palette" },
-    { "cmd": "Ctrl+P", "desc": "Quickly open a file" },
-    { "cmd": "Ctrl+,", "desc": "Open settings" },
-    { "cmd": "Ctrl+Shift+X", "desc": "Open the Extensions panel" },
-    { "cmd": "Ctrl+B", "desc": "Toggle the sidebar visibility" },
-    { "cmd": "Ctrl+J", "desc": "Toggle the bottom panel visibility" },
-    { "cmd": "Ctrl+W", "desc": "Close the current editor" },
-    { "cmd": "Ctrl+K V", "desc": "Open the Markdown preview" },
-    { "cmd": "F11", "desc": "Toggle fullscreen mode" }
+    { "cmd": "Ctrl+Shift+P", "desc": "Open the Command Palette", "details": "Provides access to all VS Code commands, settings, and features through a searchable interface.", "example": "Ctrl+Shift+P > 'Reload Window'" },
+    { "cmd": "Ctrl+P", "desc": "Quickly open a file", "details": "Allows you to search for and open any file in the current workspace by typing its name.", "example": "Ctrl+P > 'index.js'" },
+    { "cmd": "Ctrl+,", "desc": "Open settings", "details": "Opens the Settings editor to customize VS Code's behavior, appearance, and extension configurations.", "example": "Ctrl+," },
+    { "cmd": "Ctrl+Shift+X", "desc": "Open the Extensions panel", "details": "Shows the Extensions view to browse, install, and manage VS Code extensions.", "example": "Ctrl+Shift+X" },
+    { "cmd": "Ctrl+B", "desc": "Toggle the sidebar visibility", "details": "Shows or hides the primary sidebar (Explorer, Search, Source Control, etc.).", "example": "Ctrl+B" },
+    { "cmd": "Ctrl+J", "desc": "Toggle the bottom panel visibility", "details": "Shows or hides the bottom panel containing Terminal, Output, Problems, and Debug Console.", "example": "Ctrl+J" },
+    { "cmd": "Ctrl+W", "desc": "Close the current editor", "details": "Closes the active file or editor tab.", "example": "Ctrl+W" },
+    { "cmd": "Ctrl+K V", "desc": "Open the Markdown preview", "details": "Opens a side-by-side live preview of the current Markdown file.", "example": "Ctrl+K V" },
+    { "cmd": "F11", "desc": "Toggle fullscreen mode", "details": "Expands the VS Code window to fill the entire screen, hiding title bars and taskbars.", "example": "F11" }
   ],
   "Editing": [
-    { "cmd": "Ctrl+D", "desc": "Select the next occurrence" },
-    { "cmd": "Ctrl+Shift+L", "desc": "Select all occurrences" },
-    { "cmd": "Alt+Click", "desc": "Add a new cursor" },
-    { "cmd": "Shift+Alt+F", "desc": "Format the current document" },
-    { "cmd": "Ctrl+/", "desc": "Toggle line comment" },
-    { "cmd": "Shift+Alt+A", "desc": "Toggle block comment" },
-    { "cmd": "Alt+<Up/Down>", "desc": "Move the current line up or down" },
-    { "cmd": "Shift+Alt+<Up/Down>", "desc": "Copy the current line up or down" },
-    { "cmd": "Ctrl+Space", "desc": "Trigger suggestions" },
-    { "cmd": "F2", "desc": "Rename a symbol" }
+    { "cmd": "Ctrl+D", "desc": "Select the next occurrence", "details": "Adds the next instance of the currently selected text to the selection, enabling multi-cursor editing.", "example": "Select 'foo', then Ctrl+D to select next 'foo'" },
+    { "cmd": "Ctrl+Shift+L", "desc": "Select all occurrences", "details": "Adds all instances of the currently selected text to the selection for simultaneous editing.", "example": "Select 'bar', then Ctrl+Shift+L to edit all 'bar's" },
+    { "cmd": "Alt+Click", "desc": "Add a new cursor", "details": "Inserts an additional cursor at the clicked location without losing existing cursors.", "example": "Alt+Click on multiple lines" },
+    { "cmd": "Shift+Alt+F", "desc": "Format the current document", "details": "Applies the configured code formatter (e.g., Prettier, ESLint) to the active file.", "example": "Shift+Alt+F" },
+    { "cmd": "Ctrl+/", "desc": "Toggle line comment", "details": "Comments or uncomments the current line or selected lines using the language-specific comment syntax.", "example": "Ctrl+/" },
+    { "cmd": "Shift+Alt+A", "desc": "Toggle block comment", "details": "Wraps the selected text in a block comment (e.g., /* ... */ in JS).", "example": "Shift+Alt+A" },
+    { "cmd": "Alt+<Up/Down>", "desc": "Move the current line up or down", "details": "Swaps the current line or selected lines with the line above or below it.", "example": "Alt+UpArrow" },
+    { "cmd": "Shift+Alt+<Up/Down>", "desc": "Copy the current line up or down", "details": "Duplicates the current line or selected lines to the position above or below.", "example": "Shift+Alt+DownArrow" },
+    { "cmd": "Ctrl+Space", "desc": "Trigger suggestions", "details": "Manually invokes the IntelliSense completion list for the current context.", "example": "Ctrl+Space" },
+    { "cmd": "F2", "desc": "Rename a symbol", "details": "Renames the symbol under the cursor (variable, function, etc.) across the entire workspace.", "example": "F2 on 'myVar'" }
   ],
   "Navigation": [
-    { "cmd": "Ctrl+G", "desc": "Go to a specific line" },
-    { "cmd": "Ctrl+Tab", "desc": "Navigate between open files" },
-    { "cmd": "F12", "desc": "Go to definition" },
-    { "cmd": "Shift+F12", "desc": "Find references" },
-    { "cmd": "Alt+F12", "desc": "Peek definition" }
+    { "cmd": "Ctrl+G", "desc": "Go to a specific line", "details": "Prompts for a line number and jumps the cursor to that line in the current file.", "example": "Ctrl+G > '50'" },
+    { "cmd": "Ctrl+Tab", "desc": "Navigate between open files", "details": "Opens a quick-switch menu to navigate through recently used editor tabs.", "example": "Ctrl+Tab" },
+    { "cmd": "F12", "desc": "Go to definition", "details": "Jumps to the source code where the symbol under the cursor is defined.", "example": "F12 on 'calculateTotal'" },
+    { "cmd": "Shift+F12", "desc": "Find references", "details": "Opens a peek view showing all locations in the workspace where the symbol is used.", "example": "Shift+F12 on 'UserClass'" },
+    { "cmd": "Alt+F12", "desc": "Peek definition", "details": "Opens a small inline window showing the definition of the symbol without leaving the current file.", "example": "Alt+F12" }
   ],
   "Search": [
-    { "cmd": "Ctrl+F", "desc": "Find in the current file" },
-    { "cmd": "Ctrl+H", "desc": "Replace in the current file" },
-    { "cmd": "Ctrl+Shift+F", "desc": "Search across the workspace" },
-    { "cmd": "Ctrl+Shift+H", "desc": "Replace across the workspace" }
+    { "cmd": "Ctrl+F", "desc": "Find in the current file", "details": "Opens the search widget for the active editor window.", "example": "Ctrl+F > 'keyword'" },
+    { "cmd": "Ctrl+H", "desc": "Replace in the current file", "details": "Opens the replace widget for the active editor window.", "example": "Ctrl+H" },
+    { "cmd": "Ctrl+Shift+F", "desc": "Search across the workspace", "details": "Opens the Search view in the sidebar to search for text in all files in the workspace.", "example": "Ctrl+Shift+F" },
+    { "cmd": "Ctrl+Shift+H", "desc": "Replace across the workspace", "details": "Opens the Replace view in the sidebar to perform text replacement in all workspace files.", "example": "Ctrl+Shift+H" }
   ],
   "Terminal": [
-    { "cmd": "Ctrl+`", "desc": "Toggle the integrated terminal" },
-    { "cmd": "Ctrl+Shift+`", "desc": "Open a new terminal window" }
+    { "cmd": "Ctrl+`", "desc": "Toggle the integrated terminal", "details": "Shows or hides the built-in terminal at the bottom of the editor.", "example": "Ctrl+`" },
+    { "cmd": "Ctrl+Shift+`", "desc": "Open a new terminal window", "details": "Creates an additional terminal instance in the bottom panel.", "example": "Ctrl+Shift+`" }
   ]
 }

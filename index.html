@@ -78,6 +78,25 @@
       </main>
     </div>
 
+    <!-- COMMAND DETAILS MODAL -->
+    <div id="cmdModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modalCmd"></h2>
+          <button class="close-btn" onclick="closeModal()" aria-label="Close modal"><i class="ph ph-x"></i></button>
+        </div>
+        <p id="modalDesc" class="modal-desc"></p>
+        
+        <div id="modalDetailsBox" class="modal-details-box">
+          <p id="modalDetails"></p>
+          <div class="modal-example" id="modalExampleSection">
+            <h4>Example Usage</h4>
+            <pre><code id="modalExampleCode"></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

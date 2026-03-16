@@ -1,74 +1,74 @@
 {
   "Setup": [
-    { "cmd": "git --version", "desc": "Show the installed Git version" },
-    { "cmd": "git config --global user.name <name>", "desc": "Set the global username" },
-    { "cmd": "git config --global user.email <email>", "desc": "Set the global email" },
-    { "cmd": "git config --global core.editor <editor>", "desc": "Set the default text editor" },
-    { "cmd": "git config --list", "desc": "List all Git configurations" },
-    { "cmd": "git init", "desc": "Initialize a new Git repository" }
+    { "cmd": "git --version", "desc": "Show the installed Git version", "details": "Displays the current version of Git installed on your system.", "example": "git --version" },
+    { "cmd": "git config --global user.name <name>", "desc": "Set the global username", "details": "Configures the name that will be attached to your commits globally on the current machine.", "example": "git config --global user.name \"John Doe\"" },
+    { "cmd": "git config --global user.email <email>", "desc": "Set the global email", "details": "Configures the email address that will be associated with your commits globally.", "example": "git config --global user.email \"john@example.com\"" },
+    { "cmd": "git config --global core.editor <editor>", "desc": "Set the default text editor", "details": "Specifies which text editor Git should use when it needs you to type a message (like for commits or rebases).", "example": "git config --global core.editor \"code --wait\"" },
+    { "cmd": "git config --list", "desc": "List all Git configurations", "details": "Shows all the configuration settings currently in effect for Git, including global and repository-specific ones.", "example": "git config --list" },
+    { "cmd": "git init", "desc": "Initialize a new Git repository", "details": "Creates a new .git subdirectory in your current directory, turning it into a Git repository.", "example": "git init" }
   ],
   "Working with Files": [
-    { "cmd": "git status", "desc": "Show the repository status" },
-    { "cmd": "git diff", "desc": "Show unstaged changes" },
-    { "cmd": "git diff --staged", "desc": "Show staged changes" },
-    { "cmd": "git add <file>", "desc": "Stage a specific file" },
-    { "cmd": "git add .", "desc": "Stage all modified and new files" },
-    { "cmd": "git rm <file>", "desc": "Remove a tracked file" },
-    { "cmd": "git mv <old> <new>", "desc": "Rename a tracked file" },
-    { "cmd": "git blame <file>", "desc": "Show file modifications line by line" }
+    { "cmd": "git status", "desc": "Show the repository status", "details": "Displays the state of the working directory and the staging area, showing which changes have been staged, which haven't, and which files aren't being tracked.", "example": "git status" },
+    { "cmd": "git diff", "desc": "Show unstaged changes", "details": "Shows the differences between the files in your working directory and the last committed version (or the staged version).", "example": "git diff" },
+    { "cmd": "git diff --staged", "desc": "Show staged changes", "details": "Shows the differences between the files you have staged for the next commit and the last committed version.", "example": "git diff --staged" },
+    { "cmd": "git add <file>", "desc": "Stage a specific file", "details": "Adds a specific file to the staging area, preparing it to be included in the next commit.", "example": "git add index.html" },
+    { "cmd": "git add .", "desc": "Stage all modified and new files", "details": "Adds all new, modified, and deleted files in the current directory and subdirectories to the staging area.", "example": "git add ." },
+    { "cmd": "git rm <file>", "desc": "Remove a tracked file", "details": "Removes a file from both the working directory and the Git index (staging area).", "example": "git rm old_script.js" },
+    { "cmd": "git mv <old> <new>", "desc": "Rename a tracked file", "details": "Renames or moves a file, and automatically stages the change for the next commit.", "example": "git mv config.json settings.json" },
+    { "cmd": "git blame <file>", "desc": "Show file modifications line by line", "details": "Displays the last commit that modified each line of a file, along with the author and timestamp.", "example": "git blame main.py" }
   ],
   "Commits": [
-    { "cmd": "git commit -m <message>", "desc": "Commit staged changes with a message" },
-    { "cmd": "git commit --amend", "desc": "Modify the last commit" },
-    { "cmd": "git commit --amend --no-edit", "desc": "Amend the last commit without changing the message" },
-    { "cmd": "git log", "desc": "Show the commit history" },
-    { "cmd": "git log --oneline", "desc": "Show a compact commit history" },
-    { "cmd": "git log --graph --oneline --all", "desc": "Show a branch graph" },
-    { "cmd": "git show <commit>", "desc": "Show details of a specific commit" }
+    { "cmd": "git commit -m <message>", "desc": "Commit staged changes with a message", "details": "Takes a snapshot of the staged changes and records them in the repository's history with a descriptive message.", "example": "git commit -m \"Fix login bug\"" },
+    { "cmd": "git commit --amend", "desc": "Modify the last commit", "details": "Allows you to add new staged changes to the most recent commit or change its commit message.", "example": "git commit --amend" },
+    { "cmd": "git commit --amend --no-edit", "desc": "Amend the last commit without changing the message", "details": "Adds staged changes to the last commit while keeping the original commit message intact.", "example": "git commit --amend --no-edit" },
+    { "cmd": "git log", "desc": "Show the commit history", "details": "Lists all the commits made in the current branch, starting from the most recent.", "example": "git log" },
+    { "cmd": "git log --oneline", "desc": "Show a compact commit history", "details": "Displays the commit history with each commit condensed into a single line showing its short hash and message.", "example": "git log --oneline" },
+    { "cmd": "git log --graph --oneline --all", "desc": "Show a branch graph", "details": "Visualizes the commit history and branch structure using a text-based graph.", "example": "git log --graph --oneline --all" },
+    { "cmd": "git show <commit>", "desc": "Show details of a specific commit", "details": "Displays the detailed information and the code changes introduced by a specific commit hash.", "example": "git show a1b2c3d" }
   ],
   "Branches": [
-    { "cmd": "git branch", "desc": "List all local branches" },
-    { "cmd": "git branch <name>", "desc": "Create a new branch" },
-    { "cmd": "git branch -d <name>", "desc": "Delete a branch safely" },
-    { "cmd": "git checkout <name>", "desc": "Switch to a branch" },
-    { "cmd": "git checkout -b <name>", "desc": "Create and switch to a new branch" },
-    { "cmd": "git switch <name>", "desc": "Switch to a branch (newer syntax)" }
+    { "cmd": "git branch", "desc": "List all local branches", "details": "Shows all the branches that exist in your local repository, highlighting the one you are currently on.", "example": "git branch" },
+    { "cmd": "git branch <name>", "desc": "Create a new branch", "details": "Creates a new pointer (branch) at the current commit, but does not switch to it.", "example": "git branch feature-login" },
+    { "cmd": "git branch -d <name>", "desc": "Delete a branch safely", "details": "Deletes a local branch only if it has already been fully merged into its upstream branch or the current branch.", "example": "git branch -d feature-login" },
+    { "cmd": "git checkout <name>", "desc": "Switch to a branch", "details": "Updates the files in your working directory to match the version stored in the specified branch and switches the active branch.", "example": "git checkout develop" },
+    { "cmd": "git checkout -b <name>", "desc": "Create and switch to a new branch", "details": "A shortcut command that creates a new branch and immediately switches your working directory to it.", "example": "git checkout -b hotfix-auth" },
+    { "cmd": "git switch <name>", "desc": "Switch to a branch (newer syntax)", "details": "The modern, more specific command for switching between branches, introduced to replace some uses of 'checkout'.", "example": "git switch main" }
   ],
   "Tags": [
-    { "cmd": "git tag", "desc": "List all tags" },
-    { "cmd": "git tag -a <tag> -m <message>", "desc": "Create an annotated tag" },
-    { "cmd": "git push --tags", "desc": "Push all tags to the remote repository" }
+    { "cmd": "git tag", "desc": "List all tags", "details": "Displays all the tags (labels for specific commits) in the repository.", "example": "git tag" },
+    { "cmd": "git tag -a <tag> -m <message>", "desc": "Create an annotated tag", "details": "Creates a tag object that contains the tagger's name, email, date, and a message; useful for marking release points like v1.0.", "example": "git tag -a v1.0 -m \"Initial stable release\"" },
+    { "cmd": "git push --tags", "desc": "Push all tags to the remote repository", "details": "Transfers all your local tags to the remote server, as tags are not automatically pushed with 'git push'.", "example": "git push --tags" }
   ],
   "Remote Repositories": [
-    { "cmd": "git clone <url>", "desc": "Clone a remote repository" },
-    { "cmd": "git remote -v", "desc": "List all remote repositories" },
-    { "cmd": "git fetch", "desc": "Fetch updates from the remote repository" },
-    { "cmd": "git fetch --prune", "desc": "Remove deleted remote branches locally" },
-    { "cmd": "git pull", "desc": "Fetch and merge remote changes" },
-    { "cmd": "git push", "desc": "Push local changes to the remote repository" },
-    { "cmd": "git push -u origin <branch>", "desc": "Push and set the upstream branch" }
+    { "cmd": "git clone <url>", "desc": "Clone a remote repository", "details": "Creates a local copy of an existing remote repository, including all its history and branches.", "example": "git clone https://github.com/user/repo.git" },
+    { "cmd": "git remote -v", "desc": "List all remote repositories", "details": "Shows the names and URLs of the remote repositories that your local repository is connected to.", "example": "git remote -v" },
+    { "cmd": "git fetch", "desc": "Fetch updates from the remote repository", "details": "Downloads the latest changes from a remote repository but does not merge them into your local branches.", "example": "git fetch origin" },
+    { "cmd": "git fetch --prune", "desc": "Remove deleted remote branches locally", "details": "Updates your local list of remote branches, removing references to branches that have been deleted on the server.", "example": "git fetch --prune" },
+    { "cmd": "git pull", "desc": "Fetch and merge remote changes", "details": "A combination of 'git fetch' and 'git merge'; it downloads changes from the remote and integrates them into your current branch.", "example": "git pull origin main" },
+    { "cmd": "git push", "desc": "Push local changes to the remote repository", "details": "Uploads your local commit history to the specified remote branch.", "example": "git push origin feature-branch" },
+    { "cmd": "git push -u origin <branch>", "desc": "Push and set the upstream branch", "details": "Pushes your branch to the remote and also sets up a tracking relationship so future 'git push/pull' commands know which remote to use.", "example": "git push -u origin main" }
   ],
   "Merging": [
-    { "cmd": "git merge <branch>", "desc": "Merge a branch into the current one" },
-    { "cmd": "git merge --no-ff <branch>", "desc": "Merge with a new commit object" },
-    { "cmd": "git merge --squash <branch>", "desc": "Squash merge a branch" },
-    { "cmd": "git rebase <branch>", "desc": "Rebase the current branch" },
-    { "cmd": "git cherry-pick <commit>", "desc": "Apply a specific commit to the current branch" }
+    { "cmd": "git merge <branch>", "desc": "Merge a branch into the current one", "details": "Combines the history and changes from the specified branch into your currently active branch.", "example": "git merge feature-ui" },
+    { "cmd": "git merge --no-ff <branch>", "desc": "Merge with a new commit object", "details": "Forces Git to create a merge commit even if a fast-forward merge is possible, preserving the history of the feature branch.", "example": "git merge --no-ff develop" },
+    { "cmd": "git merge --squash <branch>", "desc": "Squash merge a branch", "details": "Combines all the commits from the feature branch into a single set of changes to be committed on the current branch.", "example": "git merge --squash feature-exp" },
+    { "cmd": "git rebase <branch>", "desc": "Rebase the current branch", "details": "Moves the entire base of your current branch to the tip of the specified branch, creating a linear history.", "example": "git rebase main" },
+    { "cmd": "git cherry-pick <commit>", "desc": "Apply a specific commit to the current branch", "details": "Takes the changes introduced by a single specific commit from another branch and applies them to your current branch.", "example": "git cherry-pick d3e4f5g" }
   ],
   "Undo & Reset": [
-    { "cmd": "git restore <file>", "desc": "Discard unstaged changes in a file" },
-    { "cmd": "git restore --staged <file>", "desc": "Unstage a file" },
-    { "cmd": "git revert <commit>", "desc": "Create a reverse commit" },
-    { "cmd": "git reset --soft HEAD~1", "desc": "Undo the last commit but keep staged changes" },
-    { "cmd": "git reset --mixed HEAD~1", "desc": "Undo the last commit but keep files as unstaged" },
-    { "cmd": "git reset --hard HEAD~1", "desc": "Undo the last commit and discard all changes" },
-    { "cmd": "git clean -fd", "desc": "Remove all untracked files and directories" }
+    { "cmd": "git restore <file>", "desc": "Discard unstaged changes in a file", "details": "Reverts a file in your working directory to its last committed or staged state.", "example": "git restore script.js" },
+    { "cmd": "git restore --staged <file>", "desc": "Unstage a file", "details": "Removes a file from the staging area but keeps the changes in your working directory.", "example": "git restore --staged README.md" },
+    { "cmd": "git revert <commit>", "desc": "Create a reverse commit", "details": "Creates a new commit that applies the exact opposite changes of a previous commit, effectively undoing it while preserving history.", "example": "git revert a1b2c3d" },
+    { "cmd": "git reset --soft HEAD~1", "desc": "Undo the last commit but keep staged changes", "details": "Moves the branch pointer back by one commit, but leaves all the changes from that commit staged and ready to be recommitted.", "example": "git reset --soft HEAD~1" },
+    { "cmd": "git reset --mixed HEAD~1", "desc": "Undo the last commit but keep files as unstaged", "details": "Moves the branch pointer back one commit and unstages the changes, but keeps the actual file modifications in your working directory.", "example": "git reset --mixed HEAD~1" },
+    { "cmd": "git reset --hard HEAD~1", "desc": "Undo the last commit and discard all changes", "details": "Moves the branch pointer back and completely discards all changes in both the staging area and the working directory. Use with caution!", "example": "git reset --hard HEAD~1" },
+    { "cmd": "git clean -fd", "desc": "Remove all untracked files and directories", "details": "Deletes files and folders in your working directory that are not being tracked by Git.", "example": "git clean -fd" }
   ],
   "Stashing": [
-    { "cmd": "git stash", "desc": "Save uncommitted work temporarily" },
-    { "cmd": "git stash list", "desc": "List all stashes" },
-    { "cmd": "git stash apply", "desc": "Apply the most recent stash" },
-    { "cmd": "git stash pop", "desc": "Apply and remove the most recent stash" },
-    { "cmd": "git stash clear", "desc": "Delete all stashes" }
+    { "cmd": "git stash", "desc": "Save uncommitted work temporarily", "details": "Takes all your current uncommitted changes (both staged and unstaged) and saves them on a temporary stack for later use.", "example": "git stash" },
+    { "cmd": "git stash list", "desc": "List all stashes", "details": "Shows all the sets of changes you have previously saved using 'git stash'.", "example": "git stash list" },
+    { "cmd": "git stash apply", "desc": "Apply the most recent stash", "details": "Restores the changes from the most recent stash to your working directory but does not remove them from the stash list.", "example": "git stash apply" },
+    { "cmd": "git stash pop", "desc": "Apply and remove the most recent stash", "details": "Restores the changes from the most recent stash and immediately deletes that stash from the list.", "example": "git stash pop" },
+    { "cmd": "git stash clear", "desc": "Delete all stashes", "details": "Permanently removes all stashed changes from your repository.", "example": "git stash clear" }
   ]
 }

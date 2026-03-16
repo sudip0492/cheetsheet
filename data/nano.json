@@ -1,45 +1,45 @@
 {
   "File Operations": [
-    { "cmd": "nano <file>", "desc": "Open a file or create a new one" },
-    { "cmd": "nano +<line> <file>", "desc": "Open a file and move cursor to <line>" },
-    { "cmd": "nano -m <file>", "desc": "Enable mouse support in nano" }
+    { "cmd": "nano <file>", "desc": "Open a file or create a new one", "details": "Launches the nano editor to open an existing file or create a new one with the specified name.", "example": "nano index.html" },
+    { "cmd": "nano +<line> <file>", "desc": "Open a file and move cursor to <line>", "details": "Opens the specified file and automatically positions the cursor at the beginning of the given line number.", "example": "nano +50 script.py" },
+    { "cmd": "nano -m <file>", "desc": "Enable mouse support in nano", "details": "Starts nano with mouse functionality enabled, allowing you to click to position the cursor and scroll with the wheel.", "example": "nano -m config.txt" }
   ],
   "Navigation": [
-    { "cmd": "Ctrl+F / Right Arrow", "desc": "Move forward one character" },
-    { "cmd": "Ctrl+B / Left Arrow", "desc": "Move backward one character" },
-    { "cmd": "Ctrl+Space / Ctrl+Right", "desc": "Move forward one word" },
-    { "cmd": "Alt+Space / Ctrl+Left", "desc": "Move backward one word" },
-    { "cmd": "Ctrl+A / Home", "desc": "Move to the beginning of the line" },
-    { "cmd": "Ctrl+E / End", "desc": "Move to the end of the line" },
-    { "cmd": "Ctrl+V / Page Down", "desc": "Move to the next page" },
-    { "cmd": "Ctrl+Y / Page Up", "desc": "Move to the previous page" },
-    { "cmd": "Alt+\\ / Ctrl+Home", "desc": "Move to the first line of the file" },
-    { "cmd": "Alt+/ / Ctrl+End", "desc": "Move to the last line of the file" },
-    { "cmd": "Ctrl+_", "desc": "Go to a specific line and column number" }
+    { "cmd": "Ctrl+F / Right Arrow", "desc": "Move forward one character", "details": "Advances the cursor one position to the right.", "example": "Ctrl+F" },
+    { "cmd": "Ctrl+B / Left Arrow", "desc": "Move backward one character", "details": "Moves the cursor one position to the left.", "example": "Ctrl+B" },
+    { "cmd": "Ctrl+Space / Ctrl+Right", "desc": "Move forward one word", "details": "Jumps the cursor forward to the start of the next word.", "example": "Ctrl+RightArrow" },
+    { "cmd": "Alt+Space / Ctrl+Left", "desc": "Move backward one word", "details": "Jumps the cursor backward to the start of the previous word.", "example": "Ctrl+LeftArrow" },
+    { "cmd": "Ctrl+A / Home", "desc": "Move to the beginning of the line", "details": "Positions the cursor at the start of the current line.", "example": "Ctrl+A" },
+    { "cmd": "Ctrl+E / End", "desc": "Move to the end of the line", "details": "Positions the cursor at the end of the current line.", "example": "Ctrl+E" },
+    { "cmd": "Ctrl+V / Page Down", "desc": "Move to the next page", "details": "Scrolls the view down by one full screen page.", "example": "Ctrl+V" },
+    { "cmd": "Ctrl+Y / Page Up", "desc": "Move to the previous page", "details": "Scrolls the view up by one full screen page.", "example": "Ctrl+Y" },
+    { "cmd": "Alt+\\ / Ctrl+Home", "desc": "Move to the first line of the file", "details": "Jumps the cursor to the very beginning of the first line in the file.", "example": "Alt+\\" },
+    { "cmd": "Alt+/ / Ctrl+End", "desc": "Move to the last line of the file", "details": "Jumps the cursor to the very end of the last line in the file.", "example": "Alt+/" },
+    { "cmd": "Ctrl+_", "desc": "Go to a specific line and column number", "details": "Prompts for a line and optional column number to jump the cursor to.", "example": "Ctrl+_" }
   ],
   "Editing": [
-    { "cmd": "Ctrl+K", "desc": "Cut the current line (or selected text)" },
-    { "cmd": "Ctrl+U", "desc": "Uncut (paste) the cut text" },
-    { "cmd": "Alt+6", "desc": "Copy the current line (or selected text)" },
-    { "cmd": "Alt+A", "desc": "Mark text starting from the cursor position" },
-    { "cmd": "Ctrl+D / Delete", "desc": "Delete character under the cursor" },
-    { "cmd": "Ctrl+H / Backspace", "desc": "Delete character before the cursor" },
-    { "cmd": "Alt+U", "desc": "Undo the last action" },
-    { "cmd": "Alt+E", "desc": "Redo the last undone action" }
+    { "cmd": "Ctrl+K", "desc": "Cut the current line (or selected text)", "details": "Removes the current line or a marked region of text and stores it in the 'cutbuffer'.", "example": "Ctrl+K" },
+    { "cmd": "Ctrl+U", "desc": "Uncut (paste) the cut text", "details": "Inserts the contents of the cutbuffer at the current cursor position.", "example": "Ctrl+U" },
+    { "cmd": "Alt+6", "desc": "Copy the current line (or selected text)", "details": "Copies the current line or a marked region into the cutbuffer without removing it from the file.", "example": "Alt+6" },
+    { "cmd": "Alt+A", "desc": "Mark text starting from the cursor position", "details": "Toggles the selection of text; move the cursor to highlight the region you want to copy or cut.", "example": "Alt+A" },
+    { "cmd": "Ctrl+D / Delete", "desc": "Delete character under the cursor", "details": "Removes the character directly under the cursor position.", "example": "Ctrl+D" },
+    { "cmd": "Ctrl+H / Backspace", "desc": "Delete character before the cursor", "details": "Removes the character immediately to the left of the cursor.", "example": "Ctrl+H" },
+    { "cmd": "Alt+U", "desc": "Undo the last action", "details": "Reverts the most recent editing change made to the document.", "example": "Alt+U" },
+    { "cmd": "Alt+E", "desc": "Redo the last undone action", "details": "Re-applies the most recent change that was previously undone.", "example": "Alt+E" }
   ],
   "Search and Replace": [
-    { "cmd": "Ctrl+W", "desc": "Search for text" },
-    { "cmd": "Alt+Q", "desc": "Search backward for text" },
-    { "cmd": "Alt+W", "desc": "Repeat the last search forward" },
-    { "cmd": "Alt+R", "desc": "Replace text" }
+    { "cmd": "Ctrl+W", "desc": "Search for text", "details": "Opens a prompt at the bottom to search for a string forward in the document.", "example": "Ctrl+W" },
+    { "cmd": "Alt+Q", "desc": "Search backward for text", "details": "Opens a prompt to search for a string backward from the current position.", "example": "Alt+Q" },
+    { "cmd": "Alt+W", "desc": "Repeat the last search forward", "details": "Searches again for the most recently used search term in the forward direction.", "example": "Alt+W" },
+    { "cmd": "Alt+R", "desc": "Replace text", "details": "Opens a prompt to search for a string and then another prompt to specify its replacement.", "example": "Alt+R" }
   ],
   "Save and Exit": [
-    { "cmd": "Ctrl+S", "desc": "Save current file" },
-    { "cmd": "Ctrl+O", "desc": "Save current file as... (Write Out)" },
-    { "cmd": "Ctrl+X", "desc": "Exit nano (prompts to save if modified)" }
+    { "cmd": "Ctrl+S", "desc": "Save current file", "details": "Saves the changes made to the current file immediately.", "example": "Ctrl+S" },
+    { "cmd": "Ctrl+O", "desc": "Save current file as... (Write Out)", "details": "Prompts for a filename to save the current buffer into.", "example": "Ctrl+O" },
+    { "cmd": "Ctrl+X", "desc": "Exit nano (prompts to save if modified)", "details": "Closes the nano editor. If there are unsaved changes, it will ask if you want to save them first.", "example": "Ctrl+X" }
   ],
   "Information": [
-    { "cmd": "Ctrl+G", "desc": "Display the help menu" },
-    { "cmd": "Ctrl+C", "desc": "Show current cursor position" }
+    { "cmd": "Ctrl+G", "desc": "Display the help menu", "details": "Shows the built-in documentation for nano's commands and features.", "example": "Ctrl+G" },
+    { "cmd": "Ctrl+C", "desc": "Show current cursor position", "details": "Displays the current line, column, and character position of the cursor at the bottom of the screen.", "example": "Ctrl+C" }
   ]
 }

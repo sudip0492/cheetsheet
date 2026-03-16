@@ -1,69 +1,69 @@
 {
   "Navigation": [
-    { "cmd": "pwd", "desc": "Print the working directory" },
-    { "cmd": "ls", "desc": "List the directory contents" },
-    { "cmd": "ls -la", "desc": "List all contents with details" },
-    { "cmd": "cd <dir>", "desc": "Change the directory" },
-    { "cmd": "cd ~", "desc": "Navigate to the home directory" },
-    { "cmd": "cd -", "desc": "Navigate to the previous directory" },
-    { "cmd": "tree", "desc": "Display the directory tree" }
+    { "cmd": "pwd", "desc": "Print the working directory", "details": "Outputs the full absolute path of the current directory.", "example": "$ pwd\n/var/www/html" },
+    { "cmd": "ls", "desc": "List the directory contents", "details": "Lists files and directories in the current working directory without hidden files.", "example": "$ ls\nindex.html script.js styles.css" },
+    { "cmd": "ls -la", "desc": "List all contents with details", "details": "Lists all files (including hidden ones starting with '.') in long format, showing permissions, ownership, size, and timestamps.", "example": "$ ls -la\ndrwxr-xr-x 2 user user 4096 Mar 17 10:00 .\n-rw-r--r-- 1 user user  120 Mar 17 10:00 .env" },
+    { "cmd": "cd <dir>", "desc": "Change the directory", "details": "Changes the current working directory to the specified path.", "example": "$ cd /var/www/html" },
+    { "cmd": "cd ~", "desc": "Navigate to the home directory", "details": "Navigates directly to the current user's home directory.", "example": "$ cd ~" },
+    { "cmd": "cd -", "desc": "Navigate to the previous directory", "details": "Navigates to the directory you were previously in (like a back button).", "example": "$ cd -" },
+    { "cmd": "tree", "desc": "Display the directory tree", "details": "Recursively lists directory contents in a tree-like format.", "example": "$ tree\n.\n├── index.html\n└── src\n    └── main.js" }
   ],
   "File Operations": [
-    { "cmd": "cp <src> <dst>", "desc": "Copy a file" },
-    { "cmd": "cp -r <dir> <dst>", "desc": "Copy a directory recursively" },
-    { "cmd": "mv <src> <dst>", "desc": "Move or rename a file/directory" },
-    { "cmd": "rm <file>", "desc": "Delete a file" },
-    { "cmd": "rm -rf <dir>", "desc": "Force delete a directory recursively" },
-    { "cmd": "touch <file>", "desc": "Create an empty file" },
-    { "cmd": "mkdir <dir>", "desc": "Create a directory" },
-    { "cmd": "ln -s <src> <dst>", "desc": "Create a symbolic link" },
-    { "cmd": "realpath <file>", "desc": "Get the absolute path of a file" },
-    { "cmd": "chmod 755 <file>", "desc": "Change file permissions" },
-    { "cmd": "chown <user>:<group> <file>", "desc": "Change file owner and group" },
-    { "cmd": "tar -czvf <file.tar.gz> <dir>", "desc": "Create a tarball archive" },
-    { "cmd": "tar -xzvf <file.tar.gz>", "desc": "Extract a tarball archive" },
-    { "cmd": "tail -f <file>", "desc": "Follow file output dynamically" },
-    { "cmd": "less <file>", "desc": "View file contents interactively" }
+    { "cmd": "cp <src> <dst>", "desc": "Copy a file", "details": "Copies a file from the source path to the destination path.", "example": "$ cp file.txt backup.txt" },
+    { "cmd": "cp -r <dir> <dst>", "desc": "Copy a directory recursively", "details": "Recursively copies a directory and all of its contents.", "example": "$ cp -r /var/log /backup/log" },
+    { "cmd": "mv <src> <dst>", "desc": "Move or rename a file/directory", "details": "Moves a file or directory. Also used to rename files if the destination is in the same directory.", "example": "$ mv old_name.txt new_name.txt" },
+    { "cmd": "rm <file>", "desc": "Delete a file", "details": "Permanently removes a file. Does not work on directories.", "example": "$ rm old_log.txt" },
+    { "cmd": "rm -rf <dir>", "desc": "Force delete a directory recursively", "details": "Recursively and forcefully removes a directory and all its contents without prompting. Extremely dangerous!", "example": "$ rm -rf node_modules/" },
+    { "cmd": "touch <file>", "desc": "Create an empty file", "details": "Creates an empty file, or updates the modification timestamp if the file already exists.", "example": "$ touch index.html" },
+    { "cmd": "mkdir <dir>", "desc": "Create a directory", "details": "Creates a new directory.", "example": "$ mkdir assets" },
+    { "cmd": "ln -s <src> <dst>", "desc": "Create a symbolic link", "details": "Creates a symbolic link (shortcut) pointing to the source file or directory.", "example": "$ ln -s /usr/bin/python3 /usr/bin/python" },
+    { "cmd": "realpath <file>", "desc": "Get the absolute path of a file", "details": "Prints the resolved absolute path of a file, resolving any symbolic links or relative paths.", "example": "$ realpath ../src/main.js\n/home/user/project/src/main.js" },
+    { "cmd": "chmod 755 <file>", "desc": "Change file permissions", "details": "Changes file permissions. 755 gives read/write/execute to owner, and read/execute to group and others.", "example": "$ chmod 755 script.sh" },
+    { "cmd": "chown <user>:<group> <file>", "desc": "Change file owner and group", "details": "Changes the owner and group of a file or directory.", "example": "$ chown root:www-data config.php" },
+    { "cmd": "tar -czvf <file.tar.gz> <dir>", "desc": "Create a tarball archive", "details": "Creates a compressed gzipped tarball archive of a directory.", "example": "$ tar -czvf backup.tar.gz /var/www/html" },
+    { "cmd": "tar -xzvf <file.tar.gz>", "desc": "Extract a tarball archive", "details": "Extracts a gzipped tarball archive into the current directory.", "example": "$ tar -xzvf archive.tar.gz" },
+    { "cmd": "tail -f <file>", "desc": "Follow file output dynamically", "details": "Outputs the last 10 lines of a file and actively monitors it for new appended lines. Great for logs.", "example": "$ tail -f /var/log/syslog" },
+    { "cmd": "less <file>", "desc": "View file contents interactively", "details": "Opens a file in an interactive pager, allowing you to scroll up and down without loading the entire file into memory.", "example": "$ less huge_database_dump.sql" }
   ],
   "Search": [
-    { "cmd": "grep <pattern> <file>", "desc": "Search for a pattern in a file" },
-    { "cmd": "grep -r <pattern>", "desc": "Search for a pattern recursively" },
-    { "cmd": "find <path> -name <file>", "desc": "Find a file by name" },
-    { "cmd": "locate <name>", "desc": "Find a file quickly using the database" },
-    { "cmd": "awk '{print}'", "desc": "Process and format text" },
-    { "cmd": "sed 's/<old>/<new>/g'", "desc": "Replace text using regular expressions" }
+    { "cmd": "grep <pattern> <file>", "desc": "Search for a pattern in a file", "details": "Searches for a specific text pattern or regular expression inside a file.", "example": "$ grep 'ERROR' app.log" },
+    { "cmd": "grep -r <pattern>", "desc": "Search for a pattern recursively", "details": "Recursively searches for a text pattern through all files in the current directory and subdirectories.", "example": "$ grep -r 'TODO' ." },
+    { "cmd": "find <path> -name <file>", "desc": "Find a file by name", "details": "Searches the directory tree for files matching a specific name pattern.", "example": "$ find /var/log -name '*.log'" },
+    { "cmd": "locate <name>", "desc": "Find a file quickly using the database", "details": "Quickly finds files by name using a pre-built database (faster than find but may not show newly created files).", "example": "$ locate nginx.conf" },
+    { "cmd": "awk '{print}'", "desc": "Process and format text", "details": "A powerful text-processing language. This basic example prints specific columns from text output.", "example": "$ ps aux | awk '{print $1, $2}'" },
+    { "cmd": "sed 's/<old>/<new>/g'", "desc": "Replace text using regular expressions", "details": "Stream editor. Used to perform basic text transformations, like replacing all occurrences of a string.", "example": "$ sed 's/localhost/127.0.0.1/g' config.txt" }
   ],
   "Processes": [
-    { "cmd": "ps aux", "desc": "List all running processes (BSD style)" },
-    { "cmd": "ps -ef", "desc": "List all running processes (Standard format)" },
-    { "cmd": "ps -ax", "desc": "List all processes with terminal attached" },
-    { "cmd": "top", "desc": "Monitor processes in real-time" },
-    { "cmd": "htop", "desc": "Enhanced real-time process monitor" },
-    { "cmd": "kill <pid>", "desc": "Terminate a process by PID" },
-    { "cmd": "kill -9 <pid>", "desc": "Force kill a process by PID" },
-    { "cmd": "pkill <name>", "desc": "Terminate a process by name" }
+    { "cmd": "ps aux", "desc": "List all running processes (BSD style)", "details": "Lists all running processes on the system, showing user, PID, CPU, memory, and command.", "example": "$ ps aux" },
+    { "cmd": "ps -ef", "desc": "List all running processes (Standard format)", "details": "Lists all running processes using the standard System V format.", "example": "$ ps -ef" },
+    { "cmd": "ps -ax", "desc": "List all processes with terminal attached", "details": "Lists all processes with a terminal attached.", "example": "$ ps -ax" },
+    { "cmd": "top", "desc": "Monitor processes in real-time", "details": "Provides a dynamic, real-time view of running processes and system resource usage.", "example": "$ top" },
+    { "cmd": "htop", "desc": "Enhanced real-time process monitor", "details": "An interactive and colorful alternative to top, allowing easier process management (often requires installation).", "example": "$ htop" },
+    { "cmd": "kill <pid>", "desc": "Terminate a process by PID", "details": "Sends a TERM signal to gracefully terminate a process using its Process ID.", "example": "$ kill 1234" },
+    { "cmd": "kill -9 <pid>", "desc": "Force kill a process by PID", "details": "Sends a KILL signal to forcefully terminate a process immediately. Only use if graceful kill fails.", "example": "$ kill -9 1234" },
+    { "cmd": "pkill <name>", "desc": "Terminate a process by name", "details": "Terminates all processes matching the specified name.", "example": "$ pkill node" }
   ],
   "Networking": [
-    { "cmd": "ping <host>", "desc": "Check network connectivity" },
-    { "cmd": "curl <url>", "desc": "Fetch contents of a URL" },
-    { "cmd": "wget <url>", "desc": "Download a file from a URL" },
-    { "cmd": "ssh <user>@<host>", "desc": "Log in to a remote host via SSH" },
-    { "cmd": "scp <src> <dst>", "desc": "Securely copy files over SSH" },
-    { "cmd": "rsync -avz <src> <dst>", "desc": "Synchronize files and directories" },
-    { "cmd": "ip a", "desc": "Show IP addresses and network interfaces" }
+    { "cmd": "ping <host>", "desc": "Check network connectivity", "details": "Sends ICMP echo requests to check network connectivity and measure latency to a host.", "example": "$ ping google.com" },
+    { "cmd": "curl <url>", "desc": "Fetch contents of a URL", "details": "Transfers data from or to a server using supported protocols. Great for testing APIs.", "example": "$ curl https://api.github.com/users/sudip0492" },
+    { "cmd": "wget <url>", "desc": "Download a file from a URL", "details": "Downloads files from the web directly to your current directory.", "example": "$ wget https://example.com/file.zip" },
+    { "cmd": "ssh <user>@<host>", "desc": "Log in to a remote host via SSH", "details": "Logs into a remote machine securely over an encrypted connection.", "example": "$ ssh admin@192.168.1.10" },
+    { "cmd": "scp <src> <dst>", "desc": "Securely copy files over SSH", "details": "Securely copies files between local and remote hosts using SSH.", "example": "$ scp file.txt user@10.0.0.5:/var/www/" },
+    { "cmd": "rsync -avz <src> <dst>", "desc": "Synchronize files and directories", "details": "Synchronizes files and directories between two locations. It's fast and resumes interrupted transfers.", "example": "$ rsync -avz ./src /backup/src" },
+    { "cmd": "ip a", "desc": "Show IP addresses and network interfaces", "details": "Displays IP addresses, network interfaces, and routing information.", "example": "$ ip a" }
   ],
   "Pipes & Redirection": [
-    { "cmd": "cmd1 | cmd2", "desc": "Pass output of cmd1 as input to cmd2 (Pipe)" },
-    { "cmd": "ls -la | less", "desc": "Page through a long list of files" },
-    { "cmd": "ps aux | grep <name>", "desc": "Find a specific running process" },
-    { "cmd": "cmd > <file>", "desc": "Write output to a file (overwrites)" },
-    { "cmd": "cmd >> <file>", "desc": "Append output to a file" },
-    { "cmd": "cmd > /dev/null 2>&1", "desc": "Run a command and discard all output" }
+    { "cmd": "cmd1 | cmd2", "desc": "Pass output of cmd1 as input to cmd2 (Pipe)", "details": "Pipes the standard output of the first command directly into the standard input of the second command.", "example": "$ ls -la | grep 'March'" },
+    { "cmd": "ls -la | less", "desc": "Page through a long list of files", "details": "Pipes a long directory listing into the 'less' pager so you can scroll through it.", "example": "$ ls -la | less" },
+    { "cmd": "ps aux | grep <name>", "desc": "Find a specific running process", "details": "Pipes the list of all processes into grep to filter and find a specific running app.", "example": "$ ps aux | grep python" },
+    { "cmd": "cmd > <file>", "desc": "Write output to a file (overwrites)", "details": "Redirects the standard output of a command into a file, overwriting its existing contents.", "example": "$ echo 'Hello' > greeting.txt" },
+    { "cmd": "cmd >> <file>", "desc": "Append output to a file", "details": "Redirects standard output and appends it to the end of a file.", "example": "$ echo 'World' >> greeting.txt" },
+    { "cmd": "cmd > /dev/null 2>&1", "desc": "Run a command and discard all output", "details": "Redirects both standard output and standard error to the black hole, silencing the command completely.", "example": "$ ./script.sh > /dev/null 2>&1" }
   ],
   "System Info": [
-    { "cmd": "df -h", "desc": "Show free disk space" },
-    { "cmd": "du -sh <dir>", "desc": "Show directory disk usage" },
-    { "cmd": "free -m", "desc": "Show available memory" },
-    { "cmd": "uname -a", "desc": "Show system information" }
+    { "cmd": "df -h", "desc": "Show free disk space", "details": "Displays the amount of available disk space on file systems in human-readable format (MB, GB).", "example": "$ df -h" },
+    { "cmd": "du -sh <dir>", "desc": "Show directory disk usage", "details": "Calculates and displays the total disk usage of a specific directory.", "example": "$ du -sh /var/log" },
+    { "cmd": "free -m", "desc": "Show available memory", "details": "Shows the total amount of free and used physical and swap memory in the system (in Megabytes).", "example": "$ free -m" },
+    { "cmd": "uname -a", "desc": "Show system information", "details": "Prints all system information including kernel name, network node hostname, kernel release, and machine hardware name.", "example": "$ uname -a" }
   ]
 }
