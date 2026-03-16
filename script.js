@@ -200,5 +200,5 @@ window.addEventListener('popstate', (e) => {
 });
 
 // Initialize App
-themeToggle.checked = false; // Ensure switch matches default light theme
+themeToggle.checked = true; // Ensure switch matches default dark theme
 init();
