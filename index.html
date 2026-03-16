@@ -18,7 +18,9 @@
       <!-- SIDEBAR -->
 
       <aside class="sidebar">
-        <div class="logo"><i class="ph-fill ph-book-bookmark"></i> Sudipta's Cheatsheet</div>
+        <div class="logo" id="homeLogo" style="cursor: pointer;" onclick="showHomeView()">
+          <i class="ph-fill ph-book-bookmark"></i> Sudipta's Cheatsheet
+        </div>
 
         <div class="menu-title">CHEAT SHEETS</div>
 
@@ -31,7 +33,9 @@
 
       <main class="content">
         <header class="page-header">
-          <h1 id="title">Loading...</h1>
+          <h1 id="title" class="mobile-home-btn" onclick="showHomeView()">
+            <i class="ph-fill ph-book-bookmark"></i> Sudipta's Cheatsheet
+          </h1>
           <div class="theme">
             <label class="theme-switch" aria-label="Toggle Dark Mode">
               <input type="checkbox" id="themeToggle" />
@@ -44,12 +48,28 @@
           </div>
         </header>
 
-        <div class="search-container">
-          <i class="ph ph-magnifying-glass search-icon"></i>
-          <input type="text" id="searchInput" placeholder="Search shortcuts..." disabled />
+        <!-- HOME PAGE VIEW -->
+        <div id="homeView" style="display: none;">
+          <div class="hero">
+            <h2>Welcome to Sudipta's Cheatsheet</h2>
+            <p>Your ultimate quick-reference guide for developer tools and commands. Select a topic below to get started!</p>
+          </div>
+          <div id="home-topic-grid" class="home-grid"></div>
         </div>
 
-        <div id="content"></div>
+        <!-- CHEATSHEET VIEW -->
+        <div id="cheatsheetView">
+          <div class="search-container">
+            <i class="ph ph-magnifying-glass search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Search shortcuts..." disabled />
+          </div>
+
+          <div id="content"></div>
+        </div>
+
+        <footer>
+          <p>&copy; <span id="year"></span> Sudipta's Cheatsheet. <a href="https://sudip0492.vercel.app/" target="_blank" rel="noopener noreferrer">Sudipta</a></p>
+        </footer>
       </main>
     </div>
 

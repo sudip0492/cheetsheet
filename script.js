@@ -1,5 +1,6 @@
 let currentTopic = null;
 let currentData = null;
+let allTopics = [];
 const cache = {};
 
 const content = document.getElementById("content");
@@ -7,26 +8,57 @@ const titleEl = document.getElementById("title");
 const searchInput = document.getElementById("searchInput");
 const topicListEl = document.getElementById("topic-list");
 const themeToggle = document.getElementById("themeToggle");
+const homeView = document.getElementById("homeView");
+const cheatsheetView = document.getElementById("cheatsheetView");
+const homeTopicGrid = document.getElementById("home-topic-grid");
+const sidebar = document.querySelector(".sidebar");
+
+// Set current year in footer
+document.getElementById('year').innerText = new Date().getFullYear();
 
 // Load topics on startup
 async function init() {
   try {
     const response = await fetch('data/topics.json');
     if (!response.ok) throw new Error('Failed to load topics');
-    const topics = await response.json();
+    allTopics = await response.json();
     
-    renderSidebar(topics);
+    renderSidebar(allTopics);
+    renderHomeGrid(allTopics);
     
-    // Load first topic by default if available
-    if (topics.length > 0) {
-      const t = topics[0];
-      loadTopic(t.id, t.name, t.icon);
-    }
+    // Load home view by default
+    showHomeView();
+
   } catch (error) {
     console.error("Initialization error:", error);
     topicListEl.innerHTML = '<div class="error-text">Failed to load topics. Are you running a local server?</div>';
-    titleEl.innerText = 'Error';
   }
+}
+
+function showHomeView() {
+  currentTopic = null;
+  titleEl.style.display = 'none';
+  homeView.style.display = 'block';
+  cheatsheetView.style.display = 'none';
+  sidebar.style.display = 'none';
+  
+  document.querySelectorAll(".sidebar button.topic").forEach((btn) => {
+    btn.classList.remove("active");
+  });
+}
+
+function renderHomeGrid(topics) {
+  homeTopicGrid.innerHTML = "";
+  topics.forEach(topic => {
+    const card = document.createElement("div");
+    card.className = "home-card";
+    card.innerHTML = `
+      <i class="ph ${topic.icon} card-icon"></i>
+      <h3>${topic.name}</h3>
+    `;
+    card.onclick = () => loadTopic(topic.id, topic.name, topic.icon);
+    homeTopicGrid.appendChild(card);
+  });
 }
 
 function renderSidebar(topics) {
@@ -42,6 +74,18 @@ function renderSidebar(topics) {
 }
 
 async function loadTopic(topicId, topicName, topicIcon) {
+  // Show cheatsheet view and sidebar
+  homeView.style.display = 'none';
+  cheatsheetView.style.display = 'block';
+  titleEl.style.display = '';
+  
+  // Responsive sidebar display
+  if (window.innerWidth <= 900) {
+    sidebar.style.display = 'block';
+  } else {
+    sidebar.style.display = 'flex';
+  }
+
   // Update UI
   currentTopic = topicId;
   const iconHtml = topicIcon ? `<i class="ph ${topicIcon}"></i> ` : '';
@@ -123,4 +167,5 @@ themeToggle.addEventListener("change", (e) => {
 });
 
 // Initialize App
+themeToggle.checked = false; // Ensure switch matches default light theme
 init();

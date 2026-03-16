@@ -52,6 +52,14 @@
     { "cmd": "rsync -avz <src> <dst>", "desc": "Synchronize files and directories" },
     { "cmd": "ip a", "desc": "Show IP addresses and network interfaces" }
   ],
+  "Pipes & Redirection": [
+    { "cmd": "cmd1 | cmd2", "desc": "Pass output of cmd1 as input to cmd2 (Pipe)" },
+    { "cmd": "ls -la | less", "desc": "Page through a long list of files" },
+    { "cmd": "ps aux | grep <name>", "desc": "Find a specific running process" },
+    { "cmd": "cmd > <file>", "desc": "Write output to a file (overwrites)" },
+    { "cmd": "cmd >> <file>", "desc": "Append output to a file" },
+    { "cmd": "cmd > /dev/null 2>&1", "desc": "Run a command and discard all output" }
+  ],
   "System Info": [
     { "cmd": "df -h", "desc": "Show free disk space" },
     { "cmd": "du -sh <dir>", "desc": "Show directory disk usage" },

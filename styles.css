@@ -68,13 +68,18 @@ body {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 36px;
   display: flex;
   align-items: center;
   gap: 10px;
   color: var(--btn-active-bg);
+  transition: opacity 0.2s;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 .menu-title {
@@ -206,21 +211,85 @@ input:checked + .slider .knob {
 
 .page-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 24px;
 }
 
 .page-header h1 {
+  margin-right: auto;
   font-size: 40px;
   font-weight: 700;
   display: flex;
   align-items: center;
   gap: 16px;
+  /* Title is NOT interactive on desktop because the sidebar logo handles it */
 }
 
 .page-header h1 i {
   color: var(--btn-active-bg);
+}
+
+/* HOME PAGE HERO & GRID */
+.hero {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 64px;
+  padding: 0 20px;
+}
+
+.hero h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--text-color);
+  letter-spacing: -0.5px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #8b949e;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.home-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 32px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.home-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--btn-active-bg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+.home-card .card-icon {
+  font-size: 48px;
+  color: var(--btn-active-bg);
+}
+
+.home-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
 }
 
 /* SEARCH */
@@ -264,17 +333,13 @@ input:checked + .slider .knob {
   column-gap: 24px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   #content {
     column-count: 2;
   }
 }
 
-@media (min-width: 1400px) {
-  #content {
-    column-count: 3;
-  }
-}
+/* We cap at 2 columns. 3 columns makes commands like PowerShell too cramped. */
 
 /* SECTIONS GRID AS CARDS */
 .section {
@@ -329,6 +394,151 @@ input:checked + .slider .knob {
   font-style: italic;
   font-size: 14px;
 }
+
 .error-text {
   color: #fa4549;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--sidebar-border);
+  text-align: center;
+  color: #8b949e;
+  font-size: 14px;
+}
+
+footer a {
+  color: var(--btn-active-bg);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVENESS */
+
+/* Tablet & Mobile Layout */
+@media (max-width: 900px) {
+  .app {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--sidebar-border);
+    padding: 16px;
+    display: block; /* Remove flex column so it flows naturally */
+  }
+  
+  .logo {
+    display: none; /* Hide on mobile so it doesn't duplicate the header */
+  }
+
+  .menu-title {
+    display: none; /* Hide 'CHEAT SHEETS' label to save space */
+  }
+
+  /* Horizontal scrolling for topics on mobile */
+  #topic-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 8px;
+    /* Hide scrollbar for clean look */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+  }
+  
+  #topic-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar button.topic {
+    width: auto;
+    white-space: nowrap;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .content {
+    padding: 20px 16px;
+  }
+
+  .page-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+    gap: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  
+  .page-header h1:hover {
+    opacity: 0.8;
+  }
+  
+  .search-container {
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+  
+  .hero {
+    padding: 24px 16px;
+    margin-bottom: 32px;
+  }
+  
+  .hero h2 {
+    font-size: 24px;
+  }
+  
+  .home-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 600px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .theme {
+    align-self: flex-end;
+    margin-top: -40px; /* Pull it up next to the title if possible, or leave it stacked */
+  }
+
+  .command {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .code {
+    width: 100%;
+    overflow-x: auto;
+    font-size: 0.85rem;
+  }
+  
+  /* Make description text smaller and readable */
+  .command span:last-child {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.9;
+  }
 }
