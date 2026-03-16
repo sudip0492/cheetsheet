@@ -1,0 +1,50 @@
+{
+  "Keyboard Shortcuts": [
+    { "cmd": "Tab", "desc": "Autocomplete command or path" },
+    { "cmd": "F7", "desc": "View command history in a UI panel" },
+    { "cmd": "<Up/Down Arrow>", "desc": "Cycle through command history" },
+    { "cmd": "Ctrl+C", "desc": "Interrupt or cancel the currently running command" },
+    { "cmd": "Ctrl+L", "desc": "Clear the screen (same as Clear-Host/cls)" },
+    { "cmd": "Ctrl+Home", "desc": "Delete from the cursor to the start of the line" },
+    { "cmd": "Ctrl+End", "desc": "Delete from the cursor to the end of the line" },
+    { "cmd": "Ctrl+<Right/Left Arrow>", "desc": "Move the cursor one word at a time" },
+    { "cmd": "Alt+F7", "desc": "Clear the command history" },
+    { "cmd": "Esc", "desc": "Clear the current input line" }
+  ],
+  "Help & Discovery": [
+    { "cmd": "Get-Help <cmd>", "desc": "Show help for a specific command" },
+    { "cmd": "Get-Help <cmd> -Examples", "desc": "Show examples for a specific command" },
+    { "cmd": "Get-Command", "desc": "List all available cmdlets, aliases, and functions" },
+    { "cmd": "Get-Alias", "desc": "List all command aliases (e.g., ls -> Get-ChildItem)" },
+    { "cmd": "Get-Member", "desc": "Show properties and methods of an object" }
+  ],
+  "File & Directory Navigation": [
+    { "cmd": "Get-ChildItem", "desc": "List directory contents (Alias: ls, dir)" },
+    { "cmd": "Set-Location <path>", "desc": "Change the current directory (Alias: cd)" },
+    { "cmd": "Get-Location", "desc": "Print the current working directory (Alias: pwd)" },
+    { "cmd": "New-Item <name>", "desc": "Create a new file or directory (Alias: ni)" },
+    { "cmd": "Remove-Item <name>", "desc": "Delete a file or directory (Alias: rm, del)" },
+    { "cmd": "Copy-Item <src> <dest>", "desc": "Copy files or directories (Alias: cp, copy)" },
+    { "cmd": "Move-Item <src> <dest>", "desc": "Move or rename files or directories (Alias: mv, move)" },
+    { "cmd": "Test-Path <path>", "desc": "Check if a file or directory exists" }
+  ],
+  "File Content & Text": [
+    { "cmd": "Get-Content <file>", "desc": "Read and output file contents (Alias: cat)" },
+    { "cmd": "Set-Content <file>", "desc": "Write text to a file (overwrites existing content)" },
+    { "cmd": "Add-Content <file>", "desc": "Append text to a file" },
+    { "cmd": "Select-String <pattern>", "desc": "Search for text within files (Alias: grep)" }
+  ],
+  "System & Processes": [
+    { "cmd": "Get-Process", "desc": "List currently running processes (Alias: ps)" },
+    { "cmd": "Stop-Process -Name <name>", "desc": "Kill a process by name (Alias: kill)" },
+    { "cmd": "Start-Process <exe>", "desc": "Start a new process or program" },
+    { "cmd": "Get-Service", "desc": "List system services" },
+    { "cmd": "Restart-Service <name>", "desc": "Restart a specific system service" }
+  ],
+  "Networking": [
+    { "cmd": "Test-Connection <IP/URL>", "desc": "Ping a network address" },
+    { "cmd": "Resolve-DnsName <URL>", "desc": "Perform a DNS lookup" },
+    { "cmd": "Get-NetIPAddress", "desc": "List IP addresses (replaces ipconfig)" },
+    { "cmd": "Invoke-WebRequest <URL>", "desc": "Make an HTTP request (Alias: curl, wget)" }
+  ]
+}

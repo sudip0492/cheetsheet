@@ -1,7 +1,9 @@
 [
-  { "id": "tmux", "name": "tmux" },
-  { "id": "cpp", "name": "C++" },
-  { "id": "linux", "name": "Linux Commands" },
-  { "id": "vscode", "name": "VS Code" },
-  { "id": "git", "name": "Git" }
+  { "id": "tmux", "name": "Tmux", "icon": "ph-terminal-window" },
+  { "id": "screen", "name": "GNU Screen", "icon": "ph-monitor" },
+  { "id": "cpp", "name": "C++", "icon": "ph-code" },
+  { "id": "linux", "name": "Linux/UNIX", "icon": "ph-linux-logo" },
+  { "id": "powershell", "name": "PowerShell", "icon": "ph-windows-logo" },
+  { "id": "vscode", "name": "VS Code", "icon": "ph-app-window" },
+  { "id": "git", "name": "Git", "icon": "ph-git-branch" }
 ]

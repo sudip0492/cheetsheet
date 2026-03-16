@@ -1,0 +1,46 @@
+{
+  "Session Management": [
+    { "cmd": "screen", "desc": "Start a new screen session" },
+    { "cmd": "screen -S <name>", "desc": "Start a new named session" },
+    { "cmd": "screen -ls", "desc": "List all running screen sessions" },
+    { "cmd": "screen -r", "desc": "Reattach to a detached session" },
+    { "cmd": "screen -r <name>", "desc": "Reattach to a named session" },
+    { "cmd": "screen -d -r", "desc": "Detach a running session and reattach here" },
+    { "cmd": "Ctrl+a d", "desc": "Detach from the current session" },
+    { "cmd": "Ctrl+a D D", "desc": "Detach and log out" },
+    { "cmd": "exit", "desc": "Kill the current screen session" }
+  ],
+  "Windows": [
+    { "cmd": "Ctrl+a c", "desc": "Create a new window" },
+    { "cmd": "Ctrl+a n", "desc": "Switch to the next window" },
+    { "cmd": "Ctrl+a p", "desc": "Switch to the previous window" },
+    { "cmd": "Ctrl+a <0-9>", "desc": "Switch to a window by number (0-9)" },
+    { "cmd": "Ctrl+a '", "desc": "Prompt for a window name or number to switch to" },
+    { "cmd": "Ctrl+a A", "desc": "Rename the current window" },
+    { "cmd": "Ctrl+a w", "desc": "List all windows (displayed in the status bar)" },
+    { "cmd": "Ctrl+a \"", "desc": "Show an interactive window list" },
+    { "cmd": "Ctrl+a k", "desc": "Kill the current window" },
+    { "cmd": "Ctrl+a \\", "desc": "Kill all windows and terminate the session" }
+  ],
+  "Regions (Splits)": [
+    { "cmd": "Ctrl+a S", "desc": "Split the current region horizontally" },
+    { "cmd": "Ctrl+a |", "desc": "Split the current region vertically" },
+    { "cmd": "Ctrl+a Tab", "desc": "Switch input focus to the next region" },
+    { "cmd": "Ctrl+a X", "desc": "Close the current region" },
+    { "cmd": "Ctrl+a Q", "desc": "Close all regions except the current one" }
+  ],
+  "Copy Mode": [
+    { "cmd": "Ctrl+a [", "desc": "Enter copy/scrollback mode" },
+    { "cmd": "Space", "desc": "Start a selection in copy mode" },
+    { "cmd": "Enter", "desc": "End selection and copy text" },
+    { "cmd": "Ctrl+a ]", "desc": "Paste copied text" },
+    { "cmd": "Ctrl+u", "desc": "Scroll the page up" },
+    { "cmd": "Ctrl+d", "desc": "Scroll the page down" }
+  ],
+  "Miscellaneous": [
+    { "cmd": "Ctrl+a ?", "desc": "Show help and key bindings" },
+    { "cmd": "Ctrl+a Ctrl+a", "desc": "Toggle between current and previous windows" },
+    { "cmd": "Ctrl+a :", "desc": "Enter the screen command prompt" },
+    { "cmd": "Ctrl+a H", "desc": "Toggle logging the current window to a file" }
+  ]
+}

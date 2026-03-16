@@ -1,74 +1,74 @@
 {
   "Setup": [
-    { "cmd": "git --version", "desc": "Show git version" },
-    { "cmd": "git config --global user.name name", "desc": "Set username" },
-    { "cmd": "git config --global user.email email", "desc": "Set email" },
-    { "cmd": "git config --global core.editor vim", "desc": "Set default editor" },
-    { "cmd": "git config --list", "desc": "List configuration" },
-    { "cmd": "git init", "desc": "Initialize repository" }
+    { "cmd": "git --version", "desc": "Show the installed Git version" },
+    { "cmd": "git config --global user.name <name>", "desc": "Set the global username" },
+    { "cmd": "git config --global user.email <email>", "desc": "Set the global email" },
+    { "cmd": "git config --global core.editor <editor>", "desc": "Set the default text editor" },
+    { "cmd": "git config --list", "desc": "List all Git configurations" },
+    { "cmd": "git init", "desc": "Initialize a new Git repository" }
   ],
   "Working with Files": [
-    { "cmd": "git status", "desc": "Show repository status" },
-    { "cmd": "git diff", "desc": "Show changes not staged" },
+    { "cmd": "git status", "desc": "Show the repository status" },
+    { "cmd": "git diff", "desc": "Show unstaged changes" },
     { "cmd": "git diff --staged", "desc": "Show staged changes" },
-    { "cmd": "git add file", "desc": "Stage file" },
-    { "cmd": "git add .", "desc": "Stage all files" },
-    { "cmd": "git rm file", "desc": "Remove tracked file" },
-    { "cmd": "git mv old new", "desc": "Rename file" },
-    { "cmd": "git blame file", "desc": "Show file modifications" }
+    { "cmd": "git add <file>", "desc": "Stage a specific file" },
+    { "cmd": "git add .", "desc": "Stage all modified and new files" },
+    { "cmd": "git rm <file>", "desc": "Remove a tracked file" },
+    { "cmd": "git mv <old> <new>", "desc": "Rename a tracked file" },
+    { "cmd": "git blame <file>", "desc": "Show file modifications line by line" }
   ],
   "Commits": [
-    { "cmd": "git commit -m message", "desc": "Commit staged changes" },
-    { "cmd": "git commit --amend", "desc": "Modify last commit" },
-    { "cmd": "git commit --amend --no-edit", "desc": "Amend without changing message" },
-    { "cmd": "git log", "desc": "Show commit history" },
-    { "cmd": "git log --oneline", "desc": "Compact history" },
-    { "cmd": "git log --graph --oneline --all", "desc": "Show branch graph" },
-    { "cmd": "git show commit", "desc": "Show commit details" }
+    { "cmd": "git commit -m <message>", "desc": "Commit staged changes with a message" },
+    { "cmd": "git commit --amend", "desc": "Modify the last commit" },
+    { "cmd": "git commit --amend --no-edit", "desc": "Amend the last commit without changing the message" },
+    { "cmd": "git log", "desc": "Show the commit history" },
+    { "cmd": "git log --oneline", "desc": "Show a compact commit history" },
+    { "cmd": "git log --graph --oneline --all", "desc": "Show a branch graph" },
+    { "cmd": "git show <commit>", "desc": "Show details of a specific commit" }
   ],
   "Branches": [
-    { "cmd": "git branch", "desc": "List branches" },
-    { "cmd": "git branch name", "desc": "Create branch" },
-    { "cmd": "git branch -d name", "desc": "Delete branch" },
-    { "cmd": "git checkout name", "desc": "Switch branch" },
-    { "cmd": "git checkout -b name", "desc": "Create and switch branch" },
-    { "cmd": "git switch name", "desc": "Switch branch new syntax" }
+    { "cmd": "git branch", "desc": "List all local branches" },
+    { "cmd": "git branch <name>", "desc": "Create a new branch" },
+    { "cmd": "git branch -d <name>", "desc": "Delete a branch safely" },
+    { "cmd": "git checkout <name>", "desc": "Switch to a branch" },
+    { "cmd": "git checkout -b <name>", "desc": "Create and switch to a new branch" },
+    { "cmd": "git switch <name>", "desc": "Switch to a branch (newer syntax)" }
   ],
   "Tags": [
-    { "cmd": "git tag", "desc": "List tags" },
-    { "cmd": "git tag -a v1.0 -m msg", "desc": "Create annotated tag" },
-    { "cmd": "git push --tags", "desc": "Push all tags" }
+    { "cmd": "git tag", "desc": "List all tags" },
+    { "cmd": "git tag -a <tag> -m <message>", "desc": "Create an annotated tag" },
+    { "cmd": "git push --tags", "desc": "Push all tags to the remote repository" }
   ],
   "Remote Repositories": [
-    { "cmd": "git clone url", "desc": "Clone repository" },
-    { "cmd": "git remote -v", "desc": "List remotes" },
-    { "cmd": "git fetch", "desc": "Fetch remote updates" },
-    { "cmd": "git fetch --prune", "desc": "Remove deleted remote branches" },
-    { "cmd": "git pull", "desc": "Fetch and merge" },
-    { "cmd": "git push", "desc": "Push changes" },
-    { "cmd": "git push -u origin branch", "desc": "Push and set upstream" }
+    { "cmd": "git clone <url>", "desc": "Clone a remote repository" },
+    { "cmd": "git remote -v", "desc": "List all remote repositories" },
+    { "cmd": "git fetch", "desc": "Fetch updates from the remote repository" },
+    { "cmd": "git fetch --prune", "desc": "Remove deleted remote branches locally" },
+    { "cmd": "git pull", "desc": "Fetch and merge remote changes" },
+    { "cmd": "git push", "desc": "Push local changes to the remote repository" },
+    { "cmd": "git push -u origin <branch>", "desc": "Push and set the upstream branch" }
   ],
   "Merging": [
-    { "cmd": "git merge branch", "desc": "Merge branch" },
-    { "cmd": "git merge --no-ff branch", "desc": "Merge with commit" },
-    { "cmd": "git merge --squash branch", "desc": "Squash merge" },
-    { "cmd": "git rebase branch", "desc": "Rebase branch" },
-    { "cmd": "git cherry-pick commit", "desc": "Apply specific commit" }
+    { "cmd": "git merge <branch>", "desc": "Merge a branch into the current one" },
+    { "cmd": "git merge --no-ff <branch>", "desc": "Merge with a new commit object" },
+    { "cmd": "git merge --squash <branch>", "desc": "Squash merge a branch" },
+    { "cmd": "git rebase <branch>", "desc": "Rebase the current branch" },
+    { "cmd": "git cherry-pick <commit>", "desc": "Apply a specific commit to the current branch" }
   ],
   "Undo & Reset": [
-    { "cmd": "git restore file", "desc": "Discard unstaged changes" },
-    { "cmd": "git restore --staged file", "desc": "Unstage a file" },
-    { "cmd": "git revert commit", "desc": "Create reverse commit" },
-    { "cmd": "git reset --soft HEAD~1", "desc": "Undo commit keep staged" },
-    { "cmd": "git reset --mixed HEAD~1", "desc": "Undo commit keep files" },
-    { "cmd": "git reset --hard HEAD~1", "desc": "Undo commit discard changes" },
-    { "cmd": "git clean -fd", "desc": "Remove untracked files" }
+    { "cmd": "git restore <file>", "desc": "Discard unstaged changes in a file" },
+    { "cmd": "git restore --staged <file>", "desc": "Unstage a file" },
+    { "cmd": "git revert <commit>", "desc": "Create a reverse commit" },
+    { "cmd": "git reset --soft HEAD~1", "desc": "Undo the last commit but keep staged changes" },
+    { "cmd": "git reset --mixed HEAD~1", "desc": "Undo the last commit but keep files as unstaged" },
+    { "cmd": "git reset --hard HEAD~1", "desc": "Undo the last commit and discard all changes" },
+    { "cmd": "git clean -fd", "desc": "Remove all untracked files and directories" }
   ],
   "Stashing": [
-    { "cmd": "git stash", "desc": "Save work temporarily" },
-    { "cmd": "git stash list", "desc": "List stashes" },
-    { "cmd": "git stash apply", "desc": "Apply stash" },
-    { "cmd": "git stash pop", "desc": "Apply and remove stash" },
+    { "cmd": "git stash", "desc": "Save uncommitted work temporarily" },
+    { "cmd": "git stash list", "desc": "List all stashes" },
+    { "cmd": "git stash apply", "desc": "Apply the most recent stash" },
+    { "cmd": "git stash pop", "desc": "Apply and remove the most recent stash" },
     { "cmd": "git stash clear", "desc": "Delete all stashes" }
   ]
 }

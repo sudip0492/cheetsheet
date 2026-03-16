@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevSheets</title>
+    <title>Sudipta's Cheatsheet</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -12,19 +18,12 @@
       <!-- SIDEBAR -->
 
       <aside class="sidebar">
-        <div class="logo">💻 DevSheets</div>
+        <div class="logo"><i class="ph-fill ph-book-bookmark"></i> Sudipta's Cheatsheet</div>
 
         <div class="menu-title">CHEAT SHEETS</div>
 
         <div id="topic-list">
           <div class="loading-text">Loading topics...</div>
-        </div>
-
-        <div class="theme">
-          <label>
-            <input type="checkbox" id="themeToggle" />
-            Dark Mode
-          </label>
         </div>
       </aside>
 
@@ -33,9 +32,22 @@
       <main class="content">
         <header class="page-header">
           <h1 id="title">Loading...</h1>
+          <div class="theme">
+            <label class="theme-switch" aria-label="Toggle Dark Mode">
+              <input type="checkbox" id="themeToggle" />
+              <div class="slider">
+                <i class="ph-fill ph-sun icon-sun"></i>
+                <i class="ph-fill ph-moon icon-moon"></i>
+                <div class="knob"></div>
+              </div>
+            </label>
+          </div>
         </header>
 
-        <input type="text" id="searchInput" placeholder="Search shortcuts..." disabled />
+        <div class="search-container">
+          <i class="ph ph-magnifying-glass search-icon"></i>
+          <input type="text" id="searchInput" placeholder="Search shortcuts..." disabled />
+        </div>
 
         <div id="content"></div>
       </main>

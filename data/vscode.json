@@ -1,42 +1,42 @@
 {
   "General": [
-    { "cmd": "Ctrl+Shift+P", "desc": "Command palette" },
-    { "cmd": "Ctrl+P", "desc": "Quick open file" },
+    { "cmd": "Ctrl+Shift+P", "desc": "Open the Command Palette" },
+    { "cmd": "Ctrl+P", "desc": "Quickly open a file" },
     { "cmd": "Ctrl+,", "desc": "Open settings" },
-    { "cmd": "Ctrl+Shift+X", "desc": "Extensions panel" },
-    { "cmd": "Ctrl+B", "desc": "Toggle sidebar" },
-    { "cmd": "Ctrl+J", "desc": "Toggle bottom panel" },
-    { "cmd": "Ctrl+W", "desc": "Close editor" },
-    { "cmd": "Ctrl+K V", "desc": "Open Markdown preview" },
-    { "cmd": "F11", "desc": "Toggle fullscreen" }
+    { "cmd": "Ctrl+Shift+X", "desc": "Open the Extensions panel" },
+    { "cmd": "Ctrl+B", "desc": "Toggle the sidebar visibility" },
+    { "cmd": "Ctrl+J", "desc": "Toggle the bottom panel visibility" },
+    { "cmd": "Ctrl+W", "desc": "Close the current editor" },
+    { "cmd": "Ctrl+K V", "desc": "Open the Markdown preview" },
+    { "cmd": "F11", "desc": "Toggle fullscreen mode" }
   ],
   "Editing": [
-    { "cmd": "Ctrl+D", "desc": "Select next occurrence" },
+    { "cmd": "Ctrl+D", "desc": "Select the next occurrence" },
     { "cmd": "Ctrl+Shift+L", "desc": "Select all occurrences" },
-    { "cmd": "Alt+Click", "desc": "Add cursor" },
-    { "cmd": "Shift+Alt+F", "desc": "Format document" },
+    { "cmd": "Alt+Click", "desc": "Add a new cursor" },
+    { "cmd": "Shift+Alt+F", "desc": "Format the current document" },
     { "cmd": "Ctrl+/", "desc": "Toggle line comment" },
     { "cmd": "Shift+Alt+A", "desc": "Toggle block comment" },
-    { "cmd": "Alt+Up/Down", "desc": "Move line up/down" },
-    { "cmd": "Shift+Alt+Up/Down", "desc": "Copy line up/down" },
-    { "cmd": "Ctrl+Space", "desc": "Trigger suggestion" },
-    { "cmd": "F2", "desc": "Rename symbol" }
+    { "cmd": "Alt+<Up/Down>", "desc": "Move the current line up or down" },
+    { "cmd": "Shift+Alt+<Up/Down>", "desc": "Copy the current line up or down" },
+    { "cmd": "Ctrl+Space", "desc": "Trigger suggestions" },
+    { "cmd": "F2", "desc": "Rename a symbol" }
   ],
   "Navigation": [
-    { "cmd": "Ctrl+G", "desc": "Go to line" },
-    { "cmd": "Ctrl+Tab", "desc": "Navigate open files" },
+    { "cmd": "Ctrl+G", "desc": "Go to a specific line" },
+    { "cmd": "Ctrl+Tab", "desc": "Navigate between open files" },
     { "cmd": "F12", "desc": "Go to definition" },
     { "cmd": "Shift+F12", "desc": "Find references" },
     { "cmd": "Alt+F12", "desc": "Peek definition" }
   ],
   "Search": [
-    { "cmd": "Ctrl+F", "desc": "Find in file" },
-    { "cmd": "Ctrl+H", "desc": "Replace in file" },
-    { "cmd": "Ctrl+Shift+F", "desc": "Search workspace" },
-    { "cmd": "Ctrl+Shift+H", "desc": "Replace workspace" }
+    { "cmd": "Ctrl+F", "desc": "Find in the current file" },
+    { "cmd": "Ctrl+H", "desc": "Replace in the current file" },
+    { "cmd": "Ctrl+Shift+F", "desc": "Search across the workspace" },
+    { "cmd": "Ctrl+Shift+H", "desc": "Replace across the workspace" }
   ],
   "Terminal": [
-    { "cmd": "Ctrl+`", "desc": "Toggle terminal" },
-    { "cmd": "Ctrl+Shift+`", "desc": "New terminal" }
+    { "cmd": "Ctrl+`", "desc": "Toggle the integrated terminal" },
+    { "cmd": "Ctrl+Shift+`", "desc": "Open a new terminal window" }
   ]
 }

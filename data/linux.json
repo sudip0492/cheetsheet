@@ -1,59 +1,61 @@
 {
   "Navigation": [
-    { "cmd": "pwd", "desc": "Print working directory" },
-    { "cmd": "ls", "desc": "List directory" },
-    { "cmd": "ls -la", "desc": "List all with details" },
-    { "cmd": "cd dir", "desc": "Change directory" },
-    { "cmd": "cd ~", "desc": "Home directory" },
-    { "cmd": "cd -", "desc": "Previous directory" },
-    { "cmd": "tree", "desc": "Directory tree" }
+    { "cmd": "pwd", "desc": "Print the working directory" },
+    { "cmd": "ls", "desc": "List the directory contents" },
+    { "cmd": "ls -la", "desc": "List all contents with details" },
+    { "cmd": "cd <dir>", "desc": "Change the directory" },
+    { "cmd": "cd ~", "desc": "Navigate to the home directory" },
+    { "cmd": "cd -", "desc": "Navigate to the previous directory" },
+    { "cmd": "tree", "desc": "Display the directory tree" }
   ],
   "File Operations": [
-    { "cmd": "cp src dst", "desc": "Copy file" },
-    { "cmd": "cp -r dir dst", "desc": "Copy directory" },
-    { "cmd": "mv src dst", "desc": "Move or rename" },
-    { "cmd": "rm file", "desc": "Delete file" },
-    { "cmd": "rm -rf dir", "desc": "Force delete directory" },
-    { "cmd": "touch file", "desc": "Create empty file" },
-    { "cmd": "mkdir dir", "desc": "Create directory" },
-    { "cmd": "ln -s src dst", "desc": "Create symbolic link" },
-    { "cmd": "realpath file", "desc": "Get absolute path" },
-    { "cmd": "chmod 755 file", "desc": "Change permissions" },
-    { "cmd": "chown user:group file", "desc": "Change owner" },
-    { "cmd": "tar -czvf file.tar.gz dir", "desc": "Create tarball" },
-    { "cmd": "tar -xzvf file.tar.gz", "desc": "Extract tarball" },
-    { "cmd": "tail -f file", "desc": "Follow file output" },
-    { "cmd": "less file", "desc": "View file content" }
+    { "cmd": "cp <src> <dst>", "desc": "Copy a file" },
+    { "cmd": "cp -r <dir> <dst>", "desc": "Copy a directory recursively" },
+    { "cmd": "mv <src> <dst>", "desc": "Move or rename a file/directory" },
+    { "cmd": "rm <file>", "desc": "Delete a file" },
+    { "cmd": "rm -rf <dir>", "desc": "Force delete a directory recursively" },
+    { "cmd": "touch <file>", "desc": "Create an empty file" },
+    { "cmd": "mkdir <dir>", "desc": "Create a directory" },
+    { "cmd": "ln -s <src> <dst>", "desc": "Create a symbolic link" },
+    { "cmd": "realpath <file>", "desc": "Get the absolute path of a file" },
+    { "cmd": "chmod 755 <file>", "desc": "Change file permissions" },
+    { "cmd": "chown <user>:<group> <file>", "desc": "Change file owner and group" },
+    { "cmd": "tar -czvf <file.tar.gz> <dir>", "desc": "Create a tarball archive" },
+    { "cmd": "tar -xzvf <file.tar.gz>", "desc": "Extract a tarball archive" },
+    { "cmd": "tail -f <file>", "desc": "Follow file output dynamically" },
+    { "cmd": "less <file>", "desc": "View file contents interactively" }
   ],
   "Search": [
-    { "cmd": "grep pattern file", "desc": "Search pattern" },
-    { "cmd": "grep -r pattern", "desc": "Recursive grep" },
-    { "cmd": "find path -name file", "desc": "Find file" },
-    { "cmd": "locate name", "desc": "Fast file search" },
-    { "cmd": "awk '{print}'", "desc": "Text processing" },
-    { "cmd": "sed 's/a/b/g'", "desc": "Replace text" }
+    { "cmd": "grep <pattern> <file>", "desc": "Search for a pattern in a file" },
+    { "cmd": "grep -r <pattern>", "desc": "Search for a pattern recursively" },
+    { "cmd": "find <path> -name <file>", "desc": "Find a file by name" },
+    { "cmd": "locate <name>", "desc": "Find a file quickly using the database" },
+    { "cmd": "awk '{print}'", "desc": "Process and format text" },
+    { "cmd": "sed 's/<old>/<new>/g'", "desc": "Replace text using regular expressions" }
   ],
   "Processes": [
-    { "cmd": "ps aux", "desc": "List processes" },
-    { "cmd": "top", "desc": "Process monitor" },
-    { "cmd": "htop", "desc": "Enhanced monitor" },
-    { "cmd": "kill pid", "desc": "Terminate process" },
-    { "cmd": "kill -9 pid", "desc": "Force kill" },
-    { "cmd": "pkill name", "desc": "Kill by name" }
+    { "cmd": "ps aux", "desc": "List all running processes (BSD style)" },
+    { "cmd": "ps -ef", "desc": "List all running processes (Standard format)" },
+    { "cmd": "ps -ax", "desc": "List all processes with terminal attached" },
+    { "cmd": "top", "desc": "Monitor processes in real-time" },
+    { "cmd": "htop", "desc": "Enhanced real-time process monitor" },
+    { "cmd": "kill <pid>", "desc": "Terminate a process by PID" },
+    { "cmd": "kill -9 <pid>", "desc": "Force kill a process by PID" },
+    { "cmd": "pkill <name>", "desc": "Terminate a process by name" }
   ],
   "Networking": [
-    { "cmd": "ping host", "desc": "Check connectivity" },
-    { "cmd": "curl url", "desc": "Fetch URL" },
-    { "cmd": "wget url", "desc": "Download file" },
-    { "cmd": "ssh user@host", "desc": "SSH login" },
-    { "cmd": "scp src dst", "desc": "Secure copy" },
-    { "cmd": "rsync -avz", "desc": "Sync files" },
-    { "cmd": "ip a", "desc": "Show IP addresses" }
+    { "cmd": "ping <host>", "desc": "Check network connectivity" },
+    { "cmd": "curl <url>", "desc": "Fetch contents of a URL" },
+    { "cmd": "wget <url>", "desc": "Download a file from a URL" },
+    { "cmd": "ssh <user>@<host>", "desc": "Log in to a remote host via SSH" },
+    { "cmd": "scp <src> <dst>", "desc": "Securely copy files over SSH" },
+    { "cmd": "rsync -avz <src> <dst>", "desc": "Synchronize files and directories" },
+    { "cmd": "ip a", "desc": "Show IP addresses and network interfaces" }
   ],
   "System Info": [
-    { "cmd": "df -h", "desc": "Disk free space" },
-    { "cmd": "du -sh dir", "desc": "Directory usage" },
-    { "cmd": "free -m", "desc": "Memory usage" },
-    { "cmd": "uname -a", "desc": "System information" }
+    { "cmd": "df -h", "desc": "Show free disk space" },
+    { "cmd": "du -sh <dir>", "desc": "Show directory disk usage" },
+    { "cmd": "free -m", "desc": "Show available memory" },
+    { "cmd": "uname -a", "desc": "Show system information" }
   ]
 }

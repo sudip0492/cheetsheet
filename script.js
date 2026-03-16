@@ -19,7 +19,8 @@ async function init() {
     
     // Load first topic by default if available
     if (topics.length > 0) {
-      loadTopic(topics[0].id, topics[0].name);
+      const t = topics[0];
+      loadTopic(t.id, t.name, t.icon);
     }
   } catch (error) {
     console.error("Initialization error:", error);
@@ -34,16 +35,17 @@ function renderSidebar(topics) {
     const btn = document.createElement("button");
     btn.className = "topic";
     btn.dataset.topic = topic.id;
-    btn.innerText = topic.name;
-    btn.onclick = () => loadTopic(topic.id, topic.name);
+    btn.innerHTML = `<i class="ph ${topic.icon}"></i> ${topic.name}`;
+    btn.onclick = () => loadTopic(topic.id, topic.name, topic.icon);
     topicListEl.appendChild(btn);
   });
 }
 
-async function loadTopic(topicId, topicName) {
+async function loadTopic(topicId, topicName, topicIcon) {
   // Update UI
   currentTopic = topicId;
-  titleEl.innerText = topicName || "Loading...";
+  const iconHtml = topicIcon ? `<i class="ph ${topicIcon}"></i> ` : '';
+  titleEl.innerHTML = iconHtml + (topicName || "Loading...");
   searchInput.value = "";
   searchInput.disabled = true;
   content.innerHTML = '<div class="loading-text">Loading data...</div>';
@@ -70,6 +72,10 @@ async function loadTopic(topicId, topicName) {
   renderContent();
 }
 
+function escapeHTML(str) {
+  return str.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 function renderContent(query = "") {
   content.innerHTML = "";
   
@@ -94,8 +100,8 @@ function renderContent(query = "") {
     filtered.forEach((c) => {
       div.innerHTML += `
         <div class="command">
-          <span class="code">${c.cmd}</span>
-          <span>${c.desc}</span>
+          <span class="code">${escapeHTML(c.cmd)}</span>
+          <span>${escapeHTML(c.desc)}</span>
         </div>`;
     });
 
