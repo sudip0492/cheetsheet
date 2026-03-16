@@ -1,0 +1,45 @@
+{
+  "File Operations": [
+    { "cmd": "nano <file>", "desc": "Open a file or create a new one" },
+    { "cmd": "nano +<line> <file>", "desc": "Open a file and move cursor to <line>" },
+    { "cmd": "nano -m <file>", "desc": "Enable mouse support in nano" }
+  ],
+  "Navigation": [
+    { "cmd": "Ctrl+F / Right Arrow", "desc": "Move forward one character" },
+    { "cmd": "Ctrl+B / Left Arrow", "desc": "Move backward one character" },
+    { "cmd": "Ctrl+Space / Ctrl+Right", "desc": "Move forward one word" },
+    { "cmd": "Alt+Space / Ctrl+Left", "desc": "Move backward one word" },
+    { "cmd": "Ctrl+A / Home", "desc": "Move to the beginning of the line" },
+    { "cmd": "Ctrl+E / End", "desc": "Move to the end of the line" },
+    { "cmd": "Ctrl+V / Page Down", "desc": "Move to the next page" },
+    { "cmd": "Ctrl+Y / Page Up", "desc": "Move to the previous page" },
+    { "cmd": "Alt+\\ / Ctrl+Home", "desc": "Move to the first line of the file" },
+    { "cmd": "Alt+/ / Ctrl+End", "desc": "Move to the last line of the file" },
+    { "cmd": "Ctrl+_", "desc": "Go to a specific line and column number" }
+  ],
+  "Editing": [
+    { "cmd": "Ctrl+K", "desc": "Cut the current line (or selected text)" },
+    { "cmd": "Ctrl+U", "desc": "Uncut (paste) the cut text" },
+    { "cmd": "Alt+6", "desc": "Copy the current line (or selected text)" },
+    { "cmd": "Alt+A", "desc": "Mark text starting from the cursor position" },
+    { "cmd": "Ctrl+D / Delete", "desc": "Delete character under the cursor" },
+    { "cmd": "Ctrl+H / Backspace", "desc": "Delete character before the cursor" },
+    { "cmd": "Alt+U", "desc": "Undo the last action" },
+    { "cmd": "Alt+E", "desc": "Redo the last undone action" }
+  ],
+  "Search and Replace": [
+    { "cmd": "Ctrl+W", "desc": "Search for text" },
+    { "cmd": "Alt+Q", "desc": "Search backward for text" },
+    { "cmd": "Alt+W", "desc": "Repeat the last search forward" },
+    { "cmd": "Alt+R", "desc": "Replace text" }
+  ],
+  "Save and Exit": [
+    { "cmd": "Ctrl+S", "desc": "Save current file" },
+    { "cmd": "Ctrl+O", "desc": "Save current file as... (Write Out)" },
+    { "cmd": "Ctrl+X", "desc": "Exit nano (prompts to save if modified)" }
+  ],
+  "Information": [
+    { "cmd": "Ctrl+G", "desc": "Display the help menu" },
+    { "cmd": "Ctrl+C", "desc": "Show current cursor position" }
+  ]
+}

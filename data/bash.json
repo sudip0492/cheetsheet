@@ -1,0 +1,62 @@
+{
+  "Variables": [
+    { "cmd": "VAR=\"value\"", "desc": "Assign a value to a variable (no spaces)" },
+    { "cmd": "echo $VAR", "desc": "Print the value of a variable" },
+    { "cmd": "readonly VAR=\"val\"", "desc": "Make a variable read-only" },
+    { "cmd": "unset VAR", "desc": "Delete a variable" },
+    { "cmd": "${VAR:-default}", "desc": "Use default if VAR is unset/empty" },
+    { "cmd": "export VAR=\"val\"", "desc": "Export variable to child processes" }
+  ],
+  "Special Variables": [
+    { "cmd": "$0", "desc": "The name of the script" },
+    { "cmd": "$1, $2, ...", "desc": "The first, second, etc. positional arguments" },
+    { "cmd": "$#", "desc": "The total number of arguments passed" },
+    { "cmd": "$@", "desc": "All arguments as a list of strings" },
+    { "cmd": "$?", "desc": "Exit status of the last executed command" },
+    { "cmd": "$$", "desc": "Process ID (PID) of the current script" },
+    { "cmd": "$USER", "desc": "The user running the script" }
+  ],
+  "Conditionals": [
+    { "cmd": "if [ <condition> ]; then ... fi", "desc": "Basic if statement" },
+    { "cmd": "if [ <cond> ]; then ... elif [ <cond> ]; then ... else ... fi", "desc": "If/elif/else statement" },
+    { "cmd": "[ -z \"$VAR\" ]", "desc": "True if string is empty" },
+    { "cmd": "[ -n \"$VAR\" ]", "desc": "True if string is not empty" },
+    { "cmd": "[ \"$A\" == \"$B\" ]", "desc": "True if strings are equal" },
+    { "cmd": "[ \"$A\" != \"$B\" ]", "desc": "True if strings are not equal" },
+    { "cmd": "[ $A -eq $B ]", "desc": "True if integers are equal (-ne for not equal)" },
+    { "cmd": "[ $A -gt $B ]", "desc": "True if A > B (-lt for A < B, -ge for >=, -le for <=)" }
+  ],
+  "File Tests": [
+    { "cmd": "[ -e <file> ]", "desc": "True if file or directory exists" },
+    { "cmd": "[ -f <file> ]", "desc": "True if it is a regular file" },
+    { "cmd": "[ -d <dir> ]", "desc": "True if it is a directory" },
+    { "cmd": "[ -s <file> ]", "desc": "True if file size > 0" },
+    { "cmd": "[ -x <file> ]", "desc": "True if file is executable" }
+  ],
+  "Loops": [
+    { "cmd": "for i in {1..5}; do ... done", "desc": "For loop over a range of numbers" },
+    { "cmd": "for file in *.txt; do ... done", "desc": "For loop over files in a directory" },
+    { "cmd": "while [ <cond> ]; do ... done", "desc": "While loop" },
+    { "cmd": "until [ <cond> ]; do ... done", "desc": "Until loop (runs until condition is true)" },
+    { "cmd": "break", "desc": "Exit the loop" },
+    { "cmd": "continue", "desc": "Skip the rest of the loop iteration" }
+  ],
+  "Functions": [
+    { "cmd": "myfunc() { ... }", "desc": "Define a function" },
+    { "cmd": "function myfunc { ... }", "desc": "Define a function (alternative syntax)" },
+    { "cmd": "myfunc arg1 arg2", "desc": "Call a function with arguments" },
+    { "cmd": "return 0", "desc": "Return from a function (exit code 0-255)" }
+  ],
+  "Arrays": [
+    { "cmd": "arr=(a b c)", "desc": "Define an array" },
+    { "cmd": "echo ${arr[0]}", "desc": "Access the first element" },
+    { "cmd": "echo ${arr[@]}", "desc": "Access all elements" },
+    { "cmd": "echo ${#arr[@]}", "desc": "Get the length of the array" },
+    { "cmd": "arr+=(d)", "desc": "Append an element to the array" }
+  ],
+  "Arithmetic": [
+    { "cmd": "let RESULT=A+B", "desc": "Perform integer arithmetic" },
+    { "cmd": "$((A + B))", "desc": "Arithmetic expansion (e.g. echo $((5*2)))" },
+    { "cmd": "expr $A + $B", "desc": "Evaluate expression" }
+  ]
+}

@@ -1,9 +1,14 @@
 [
   { "id": "tmux", "name": "Tmux", "icon": "ph-terminal-window" },
   { "id": "screen", "name": "GNU Screen", "icon": "ph-monitor" },
-  { "id": "cpp", "name": "C++", "icon": "ph-code" },
-  { "id": "linux", "name": "Linux/UNIX", "icon": "ph-linux-logo" },
+  { "id": "vim", "name": "Vim", "icon": "ph-keyboard" },
+  { "id": "nano", "name": "Nano", "icon": "ph-pencil-line" },
+  { "id": "linux", "name": "UNIX", "icon": "ph-linux-logo" },
+  { "id": "bash", "name": "Bash Scripting", "icon": "ph-terminal" },
   { "id": "powershell", "name": "PowerShell", "icon": "ph-windows-logo" },
+  { "id": "javascript", "name": "JavaScript", "icon": "ph-file-code" },
+  { "id": "python", "name": "Python", "icon": "ph-file-text" },
+  { "id": "cpp", "name": "C++", "icon": "ph-code" },
   { "id": "vscode", "name": "VS Code", "icon": "ph-app-window" },
   { "id": "git", "name": "Git", "icon": "ph-git-branch" }
 ]

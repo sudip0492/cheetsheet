@@ -1,0 +1,59 @@
+{
+  "Variables & Types": [
+    { "cmd": "type(var)", "desc": "Get the type of a variable" },
+    { "cmd": "int(), float(), str(), bool()", "desc": "Type casting functions" },
+    { "cmd": "len(var)", "desc": "Get the length of a string, list, or dictionary" }
+  ],
+  "Strings": [
+    { "cmd": "s.lower() / s.upper()", "desc": "Convert string to lowercase / uppercase" },
+    { "cmd": "s.strip()", "desc": "Remove leading and trailing whitespace" },
+    { "cmd": "s.split(' ')", "desc": "Split string into a list by separator" },
+    { "cmd": "' '.join(list)", "desc": "Join a list of strings into a single string" },
+    { "cmd": "s.replace('old', 'new')", "desc": "Replace occurrences of a substring" },
+    { "cmd": "f'Hello {name}'", "desc": "Formatted string literals (f-strings)" }
+  ],
+  "Lists": [
+    { "cmd": "lst.append(val)", "desc": "Add an item to the end of the list" },
+    { "cmd": "lst.insert(idx, val)", "desc": "Insert an item at a given position" },
+    { "cmd": "lst.pop([idx])", "desc": "Remove and return an item (default is last)" },
+    { "cmd": "lst.remove(val)", "desc": "Remove the first item with the specified value" },
+    { "cmd": "lst.sort()", "desc": "Sort the items of the list in place" },
+    { "cmd": "lst[::-1]", "desc": "Reverse a list (via slicing)" },
+    { "cmd": "[x for x in lst if x > 0]", "desc": "List comprehension" }
+  ],
+  "Dictionaries": [
+    { "cmd": "d.keys()", "desc": "Return a view of the dictionary's keys" },
+    { "cmd": "d.values()", "desc": "Return a view of the dictionary's values" },
+    { "cmd": "d.items()", "desc": "Return a view of the dictionary's (key, value) pairs" },
+    { "cmd": "d.get(key, default)", "desc": "Return value for key, or default if key not found" },
+    { "cmd": "d.pop(key)", "desc": "Remove specified key and return the corresponding value" },
+    { "cmd": "d.update(d2)", "desc": "Update dictionary with key/value pairs from d2" }
+  ],
+  "Control Flow": [
+    { "cmd": "if condition:", "desc": "If statement" },
+    { "cmd": "elif condition:", "desc": "Else if statement" },
+    { "cmd": "else:", "desc": "Else statement" },
+    { "cmd": "for item in iterable:", "desc": "For loop iterating over items" },
+    { "cmd": "for i in range(n):", "desc": "For loop from 0 to n-1" },
+    { "cmd": "while condition:", "desc": "While loop" }
+  ],
+  "Functions": [
+    { "cmd": "def name(arg):", "desc": "Define a function" },
+    { "cmd": "lambda x: x * 2", "desc": "Anonymous inline function" },
+    { "cmd": "*args", "desc": "Arbitrary number of positional arguments" },
+    { "cmd": "**kwargs", "desc": "Arbitrary number of keyword arguments" }
+  ],
+  "File Handling": [
+    { "cmd": "with open('f.txt', 'r') as f:", "desc": "Open file safely using context manager" },
+    { "cmd": "f.read()", "desc": "Read entire file into a string" },
+    { "cmd": "f.readlines()", "desc": "Read file into a list of lines" },
+    { "cmd": "f.write('text')", "desc": "Write a string to the file" }
+  ],
+  "Environment & Packages": [
+    { "cmd": "python -m venv <name>", "desc": "Create a virtual environment" },
+    { "cmd": "source <name>/bin/activate", "desc": "Activate venv (Linux/macOS)" },
+    { "cmd": ".\\<name>\\Scripts\\activate", "desc": "Activate venv (Windows)" },
+    { "cmd": "pip install <pkg>", "desc": "Install a package" },
+    { "cmd": "pip freeze > req.txt", "desc": "Save installed packages to a file" }
+  ]
+}

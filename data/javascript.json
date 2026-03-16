@@ -1,0 +1,49 @@
+{
+  "Variables": [
+    { "cmd": "let <name> = <val>", "desc": "Block-scoped variable" },
+    { "cmd": "const <name> = <val>", "desc": "Block-scoped constant" },
+    { "cmd": "var <name> = <val>", "desc": "Function-scoped variable (legacy)" }
+  ],
+  "Functions": [
+    { "cmd": "function <name>() {}", "desc": "Function declaration" },
+    { "cmd": "const <name> = () => {}", "desc": "Arrow function" },
+    { "cmd": "(function() {})();", "desc": "Immediately Invoked Function (IIFE)" }
+  ],
+  "Arrays": [
+    { "cmd": "arr.push(<val>)", "desc": "Add item to end of array" },
+    { "cmd": "arr.pop()", "desc": "Remove and return last item" },
+    { "cmd": "arr.shift()", "desc": "Remove and return first item" },
+    { "cmd": "arr.unshift(<val>)", "desc": "Add item to beginning of array" },
+    { "cmd": "arr.map(fn)", "desc": "Create a new array with results of calling a function" },
+    { "cmd": "arr.filter(fn)", "desc": "Create a new array with elements that pass the test" },
+    { "cmd": "arr.reduce(fn, init)", "desc": "Reduce the array to a single value" },
+    { "cmd": "arr.find(fn)", "desc": "Return the first element that satisfies the test" },
+    { "cmd": "arr.includes(<val>)", "desc": "Determine whether an array includes a certain value" }
+  ],
+  "Objects": [
+    { "cmd": "Object.keys(obj)", "desc": "Return an array of a given object's property names" },
+    { "cmd": "Object.values(obj)", "desc": "Return an array of a given object's property values" },
+    { "cmd": "Object.entries(obj)", "desc": "Return an array of a given object's [key, value] pairs" },
+    { "cmd": "Object.assign(t, s)", "desc": "Copy values of all enumerable properties from source to target" },
+    { "cmd": "{...obj}", "desc": "Spread operator to copy/merge objects" }
+  ],
+  "Promises & Async": [
+    { "cmd": "new Promise((res, rej) => {})", "desc": "Create a new promise" },
+    { "cmd": "promise.then(fn).catch(fn)", "desc": "Handle promise resolution and rejection" },
+    { "cmd": "async function <name>() {}", "desc": "Declare an asynchronous function" },
+    { "cmd": "await <promise>", "desc": "Wait for a promise to resolve (inside async function)" },
+    { "cmd": "Promise.all([p1, p2])", "desc": "Wait for all promises to be resolved" }
+  ],
+  "DOM Manipulation": [
+    { "cmd": "document.querySelector(sel)", "desc": "Return the first element that matches the selector" },
+    { "cmd": "document.querySelectorAll(sel)", "desc": "Return a static NodeList of elements matching the selector" },
+    { "cmd": "document.getElementById(id)", "desc": "Return the element with the specified ID" },
+    { "cmd": "document.createElement(tag)", "desc": "Create an HTML element" },
+    { "cmd": "el.appendChild(node)", "desc": "Add a node to the end of the list of children of a specified parent" },
+    { "cmd": "el.addEventListener(ev, fn)", "desc": "Attach an event handler to the specified element" }
+  ],
+  "JSON": [
+    { "cmd": "JSON.parse(str)", "desc": "Parse a JSON string, constructing the JS value or object" },
+    { "cmd": "JSON.stringify(obj)", "desc": "Convert a JS object or value to a JSON string" }
+  ]
+}

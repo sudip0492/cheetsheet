@@ -1,0 +1,69 @@
+{
+  "Global": [
+    { "cmd": ":h <keyword>", "desc": "Open help for keyword" },
+    { "cmd": ":sav <file>", "desc": "Save file as" },
+    { "cmd": ":e <file>", "desc": "Edit a file in a new buffer" },
+    { "cmd": ":q", "desc": "Quit (fails if there are unsaved changes)" },
+    { "cmd": ":q!", "desc": "Quit and throw away unsaved changes" },
+    { "cmd": ":w", "desc": "Write (save) the file" },
+    { "cmd": ":w <file>", "desc": "Write to a specific file" },
+    { "cmd": ":wq", "desc": "Write and quit" },
+    { "cmd": ":x", "desc": "Write and quit (only writes if modified)" },
+    { "cmd": "ZZ", "desc": "Write and quit (same as :x)" }
+  ],
+  "Cursor Movement": [
+    { "cmd": "h", "desc": "Move cursor left" },
+    { "cmd": "j", "desc": "Move cursor down" },
+    { "cmd": "k", "desc": "Move cursor up" },
+    { "cmd": "l", "desc": "Move cursor right" },
+    { "cmd": "w", "desc": "Jump forwards to the start of a word" },
+    { "cmd": "b", "desc": "Jump backwards to the start of a word" },
+    { "cmd": "e", "desc": "Jump forwards to the end of a word" },
+    { "cmd": "0", "desc": "Jump to the start of the line" },
+    { "cmd": "^", "desc": "Jump to the first non-blank character of the line" },
+    { "cmd": "$", "desc": "Jump to the end of the line" },
+    { "cmd": "gg", "desc": "Go to the first line of the document" },
+    { "cmd": "G", "desc": "Go to the last line of the document" },
+    { "cmd": "<n>G", "desc": "Go to line number <n>" }
+  ],
+  "Insert Mode": [
+    { "cmd": "i", "desc": "Insert before the cursor" },
+    { "cmd": "I", "desc": "Insert at the beginning of the line" },
+    { "cmd": "a", "desc": "Insert (append) after the cursor" },
+    { "cmd": "A", "desc": "Insert (append) at the end of the line" },
+    { "cmd": "o", "desc": "Append a new line below the current line" },
+    { "cmd": "O", "desc": "Append a new line above the current line" },
+    { "cmd": "ea", "desc": "Insert (append) at the end of the word" },
+    { "cmd": "Esc", "desc": "Exit insert mode" }
+  ],
+  "Editing": [
+    { "cmd": "r", "desc": "Replace a single character" },
+    { "cmd": "cc", "desc": "Change (replace) entire line" },
+    { "cmd": "cw", "desc": "Change (replace) to the end of the word" },
+    { "cmd": "x", "desc": "Delete current character" },
+    { "cmd": "dd", "desc": "Delete (cut) a line" },
+    { "cmd": "dw", "desc": "Delete (cut) to the end of the word" },
+    { "cmd": "yy", "desc": "Yank (copy) a line" },
+    { "cmd": "yw", "desc": "Yank (copy) to the end of the word" },
+    { "cmd": "p", "desc": "Put (paste) the clipboard after cursor" },
+    { "cmd": "P", "desc": "Put (paste) before cursor" },
+    { "cmd": "u", "desc": "Undo" },
+    { "cmd": "Ctrl+r", "desc": "Redo" }
+  ],
+  "Search and Replace": [
+    { "cmd": "/<pattern>", "desc": "Search forward for pattern" },
+    { "cmd": "?<pattern>", "desc": "Search backward for pattern" },
+    { "cmd": "n", "desc": "Repeat search in same direction" },
+    { "cmd": "N", "desc": "Repeat search in opposite direction" },
+    { "cmd": ":%s/<old>/<new>/g", "desc": "Replace all old with new throughout file" },
+    { "cmd": ":%s/<old>/<new>/gc", "desc": "Replace all old with new with confirmations" }
+  ],
+  "Visual Mode": [
+    { "cmd": "v", "desc": "Start visual mode, highlight characters" },
+    { "cmd": "V", "desc": "Start linewise visual mode" },
+    { "cmd": "Ctrl+v", "desc": "Start visual block mode" },
+    { "cmd": "y", "desc": "Yank (copy) marked text" },
+    { "cmd": "d", "desc": "Delete (cut) marked text" },
+    { "cmd": "~", "desc": "Switch case" }
+  ]
+}
