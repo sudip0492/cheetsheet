@@ -26,8 +26,19 @@ async function init() {
     renderSidebar(allTopics);
     renderHomeGrid(allTopics);
     
-    // Load home view by default
-    showHomeView();
+    // Check URL path to see if we should load a specific topic
+    const path = window.location.pathname.substring(1); // remove the leading '/'
+    
+    if (path && path !== 'index.html') {
+      const topic = allTopics.find(t => t.id === path);
+      if (topic) {
+        loadTopic(topic.id, topic.name, topic.icon, false);
+      } else {
+        showHomeView(false);
+      }
+    } else {
+      showHomeView(false);
+    }
 
   } catch (error) {
     console.error("Initialization error:", error);
@@ -35,7 +46,11 @@ async function init() {
   }
 }
 
-function showHomeView() {
+function showHomeView(updateHistory = true) {
+  if (updateHistory) {
+    window.history.pushState({}, '', '/');
+  }
+  
   currentTopic = null;
   titleEl.style.display = 'none';
   homeView.style.display = 'block';
@@ -73,7 +88,11 @@ function renderSidebar(topics) {
   });
 }
 
-async function loadTopic(topicId, topicName, topicIcon) {
+async function loadTopic(topicId, topicName, topicIcon, updateHistory = true) {
+  if (updateHistory) {
+    window.history.pushState({ topicId }, '', `/${topicId}`);
+  }
+
   // Show cheatsheet view and sidebar
   homeView.style.display = 'none';
   cheatsheetView.style.display = 'block';
@@ -164,6 +183,20 @@ searchInput.addEventListener("input", (e) => {
 
 themeToggle.addEventListener("change", (e) => {
   document.body.classList.toggle("dark", e.target.checked);
+});
+
+window.addEventListener('popstate', (e) => {
+  const path = window.location.pathname.substring(1);
+  if (path && path !== 'index.html') {
+    const topic = allTopics.find(t => t.id === path);
+    if (topic) {
+      loadTopic(topic.id, topic.name, topic.icon, false);
+    } else {
+      showHomeView(false);
+    }
+  } else {
+    showHomeView(false);
+  }
 });
 
 // Initialize App

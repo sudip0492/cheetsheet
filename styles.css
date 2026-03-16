@@ -216,8 +216,31 @@ input:checked + .slider .knob {
   margin-bottom: 24px;
 }
 
-.page-header h1 {
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   margin-right: auto;
+}
+
+.mobile-home-btn {
+  display: none; /* Hidden on desktop */
+  background: transparent;
+  border: none;
+  color: var(--btn-active-bg);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: -8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.mobile-home-btn:hover {
+  background: var(--btn-hover);
+}
+
+.page-header h1 {
   font-size: 40px;
   font-weight: 700;
   display: flex;
@@ -480,15 +503,13 @@ footer a:hover {
     gap: 16px;
   }
 
+  .mobile-home-btn {
+    display: block; /* Show on mobile */
+  }
+
   .page-header h1 {
     font-size: 24px;
     gap: 8px;
-    cursor: pointer;
-    transition: opacity 0.2s;
-  }
-  
-  .page-header h1:hover {
-    opacity: 0.8;
   }
   
   .search-container {

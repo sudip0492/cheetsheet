@@ -33,9 +33,14 @@
 
       <main class="content">
         <header class="page-header">
-          <h1 id="title" class="mobile-home-btn" onclick="showHomeView()">
-            <i class="ph-fill ph-book-bookmark"></i> Sudipta's Cheatsheet
-          </h1>
+          <div class="header-left">
+            <button class="mobile-home-btn" onclick="showHomeView()" aria-label="Go to Home">
+              <i class="ph-bold ph-house"></i>
+            </button>
+            <h1 id="title">
+              <i class="ph-fill ph-book-bookmark"></i> Sudipta's Cheatsheet
+            </h1>
+          </div>
           <div class="theme">
             <label class="theme-switch" aria-label="Toggle Dark Mode">
               <input type="checkbox" id="themeToggle" />
