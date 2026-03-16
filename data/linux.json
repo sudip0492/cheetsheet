@@ -1,0 +1,59 @@
+{
+  "Navigation": [
+    { "cmd": "pwd", "desc": "Print working directory" },
+    { "cmd": "ls", "desc": "List directory" },
+    { "cmd": "ls -la", "desc": "List all with details" },
+    { "cmd": "cd dir", "desc": "Change directory" },
+    { "cmd": "cd ~", "desc": "Home directory" },
+    { "cmd": "cd -", "desc": "Previous directory" },
+    { "cmd": "tree", "desc": "Directory tree" }
+  ],
+  "File Operations": [
+    { "cmd": "cp src dst", "desc": "Copy file" },
+    { "cmd": "cp -r dir dst", "desc": "Copy directory" },
+    { "cmd": "mv src dst", "desc": "Move or rename" },
+    { "cmd": "rm file", "desc": "Delete file" },
+    { "cmd": "rm -rf dir", "desc": "Force delete directory" },
+    { "cmd": "touch file", "desc": "Create empty file" },
+    { "cmd": "mkdir dir", "desc": "Create directory" },
+    { "cmd": "ln -s src dst", "desc": "Create symbolic link" },
+    { "cmd": "realpath file", "desc": "Get absolute path" },
+    { "cmd": "chmod 755 file", "desc": "Change permissions" },
+    { "cmd": "chown user:group file", "desc": "Change owner" },
+    { "cmd": "tar -czvf file.tar.gz dir", "desc": "Create tarball" },
+    { "cmd": "tar -xzvf file.tar.gz", "desc": "Extract tarball" },
+    { "cmd": "tail -f file", "desc": "Follow file output" },
+    { "cmd": "less file", "desc": "View file content" }
+  ],
+  "Search": [
+    { "cmd": "grep pattern file", "desc": "Search pattern" },
+    { "cmd": "grep -r pattern", "desc": "Recursive grep" },
+    { "cmd": "find path -name file", "desc": "Find file" },
+    { "cmd": "locate name", "desc": "Fast file search" },
+    { "cmd": "awk '{print}'", "desc": "Text processing" },
+    { "cmd": "sed 's/a/b/g'", "desc": "Replace text" }
+  ],
+  "Processes": [
+    { "cmd": "ps aux", "desc": "List processes" },
+    { "cmd": "top", "desc": "Process monitor" },
+    { "cmd": "htop", "desc": "Enhanced monitor" },
+    { "cmd": "kill pid", "desc": "Terminate process" },
+    { "cmd": "kill -9 pid", "desc": "Force kill" },
+    { "cmd": "pkill name", "desc": "Kill by name" }
+  ],
+  "Networking": [
+    { "cmd": "ping host", "desc": "Check connectivity" },
+    { "cmd": "curl url", "desc": "Fetch URL" },
+    { "cmd": "wget url", "desc": "Download file" },
+    { "cmd": "ssh user@host", "desc": "SSH login" },
+    { "cmd": "scp src dst", "desc": "Secure copy" },
+    { "cmd": "rsync -avz", "desc": "Sync files" },
+    { "cmd": "ip a", "desc": "Show IP addresses" }
+  ],
+  "System Info": [
+    { "cmd": "df -h", "desc": "Disk free space" },
+    { "cmd": "du -sh dir", "desc": "Directory usage" },
+    { "cmd": "free -m", "desc": "Memory usage" },
+    { "cmd": "uname -a", "desc": "System information" }
+  ]
+}

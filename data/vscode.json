@@ -1,0 +1,42 @@
+{
+  "General": [
+    { "cmd": "Ctrl+Shift+P", "desc": "Command palette" },
+    { "cmd": "Ctrl+P", "desc": "Quick open file" },
+    { "cmd": "Ctrl+,", "desc": "Open settings" },
+    { "cmd": "Ctrl+Shift+X", "desc": "Extensions panel" },
+    { "cmd": "Ctrl+B", "desc": "Toggle sidebar" },
+    { "cmd": "Ctrl+J", "desc": "Toggle bottom panel" },
+    { "cmd": "Ctrl+W", "desc": "Close editor" },
+    { "cmd": "Ctrl+K V", "desc": "Open Markdown preview" },
+    { "cmd": "F11", "desc": "Toggle fullscreen" }
+  ],
+  "Editing": [
+    { "cmd": "Ctrl+D", "desc": "Select next occurrence" },
+    { "cmd": "Ctrl+Shift+L", "desc": "Select all occurrences" },
+    { "cmd": "Alt+Click", "desc": "Add cursor" },
+    { "cmd": "Shift+Alt+F", "desc": "Format document" },
+    { "cmd": "Ctrl+/", "desc": "Toggle line comment" },
+    { "cmd": "Shift+Alt+A", "desc": "Toggle block comment" },
+    { "cmd": "Alt+Up/Down", "desc": "Move line up/down" },
+    { "cmd": "Shift+Alt+Up/Down", "desc": "Copy line up/down" },
+    { "cmd": "Ctrl+Space", "desc": "Trigger suggestion" },
+    { "cmd": "F2", "desc": "Rename symbol" }
+  ],
+  "Navigation": [
+    { "cmd": "Ctrl+G", "desc": "Go to line" },
+    { "cmd": "Ctrl+Tab", "desc": "Navigate open files" },
+    { "cmd": "F12", "desc": "Go to definition" },
+    { "cmd": "Shift+F12", "desc": "Find references" },
+    { "cmd": "Alt+F12", "desc": "Peek definition" }
+  ],
+  "Search": [
+    { "cmd": "Ctrl+F", "desc": "Find in file" },
+    { "cmd": "Ctrl+H", "desc": "Replace in file" },
+    { "cmd": "Ctrl+Shift+F", "desc": "Search workspace" },
+    { "cmd": "Ctrl+Shift+H", "desc": "Replace workspace" }
+  ],
+  "Terminal": [
+    { "cmd": "Ctrl+`", "desc": "Toggle terminal" },
+    { "cmd": "Ctrl+Shift+`", "desc": "New terminal" }
+  ]
+}

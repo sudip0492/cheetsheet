@@ -1,0 +1,63 @@
+{
+  "Session Management": [
+    { "cmd": "tmux", "desc": "Start new tmux session" },
+    { "cmd": "tmux new -s name", "desc": "Create named session" },
+    { "cmd": "tmux new -s name -d", "desc": "Create detached session" },
+    { "cmd": "tmux ls", "desc": "List all sessions" },
+    { "cmd": "tmux attach", "desc": "Attach last session" },
+    { "cmd": "tmux a", "desc": "Attach last session (shorthand)" },
+    { "cmd": "tmux attach -t name", "desc": "Attach named session" },
+    { "cmd": "tmux kill-session -t name", "desc": "Kill session" },
+    { "cmd": "tmux kill-server", "desc": "Kill tmux server" },
+    { "cmd": "tmux rename-session -t old new", "desc": "Rename session" },
+    { "cmd": "tmux switch -t name", "desc": "Switch session" },
+    { "cmd": "Ctrl+b d", "desc": "Detach from current session" }
+  ],
+  "Windows": [
+    { "cmd": "Ctrl+b c", "desc": "Create new window" },
+    { "cmd": "Ctrl+b ,", "desc": "Rename window" },
+    { "cmd": "Ctrl+b n", "desc": "Next window" },
+    { "cmd": "Ctrl+b p", "desc": "Previous window" },
+    { "cmd": "Ctrl+b l", "desc": "Last active window" },
+    { "cmd": "Ctrl+b &", "desc": "Kill window" },
+    { "cmd": "Ctrl+b w", "desc": "List windows" },
+    { "cmd": "Ctrl+b f", "desc": "Find window" },
+    { "cmd": "Ctrl+b .", "desc": "Move window" },
+    { "cmd": "Ctrl+b 0-9", "desc": "Switch window by number" }
+  ],
+  "Panes": [
+    { "cmd": "Ctrl+b %", "desc": "Split vertically" },
+    { "cmd": "Ctrl+b \"", "desc": "Split horizontally" },
+    { "cmd": "Ctrl+b x", "desc": "Kill pane" },
+    { "cmd": "Ctrl+b z", "desc": "Toggle zoom" },
+    { "cmd": "Ctrl+b o", "desc": "Cycle panes" },
+    { "cmd": "Ctrl+b arrow", "desc": "Select pane by direction" },
+    { "cmd": "Ctrl+b ;", "desc": "Last pane" },
+    { "cmd": "Ctrl+b q", "desc": "Show pane numbers" },
+    { "cmd": "Ctrl+b {", "desc": "Swap pane previous" },
+    { "cmd": "Ctrl+b }", "desc": "Swap pane next" },
+    { "cmd": "Ctrl+b space", "desc": "Cycle layouts" },
+    { "cmd": "Ctrl+b !", "desc": "Break pane into new window" },
+    { "cmd": "Ctrl+b Alt+arrow", "desc": "Resize pane by 5 cells" },
+    { "cmd": "Ctrl+b m", "desc": "Mark current pane" },
+    { "cmd": "Ctrl+b M", "desc": "Clear marked pane" }
+  ],
+  "Copy Mode": [
+    { "cmd": "Ctrl+b [", "desc": "Enter copy mode" },
+    { "cmd": "Space", "desc": "Start selection" },
+    { "cmd": "Enter", "desc": "Copy selection" },
+    { "cmd": "Ctrl+b ]", "desc": "Paste buffer" },
+    { "cmd": "/", "desc": "Search forward" },
+    { "cmd": "?", "desc": "Search backward" },
+    { "cmd": "n", "desc": "Next match" },
+    { "cmd": "N", "desc": "Previous match" }
+  ],
+  "Configuration": [
+    { "cmd": "Ctrl+b :", "desc": "Enter command mode" },
+    { "cmd": "Ctrl+b ?", "desc": "Show key bindings" },
+    { "cmd": "tmux list-keys", "desc": "List all key bindings" },
+    { "cmd": "set -g mouse on", "desc": "Enable mouse mode" },
+    { "cmd": "tmux source ~/.tmux.conf", "desc": "Reload configuration" },
+    { "cmd": "Ctrl+b ~", "desc": "Show previous messages" }
+  ]
+}

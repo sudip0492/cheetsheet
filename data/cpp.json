@@ -1,0 +1,49 @@
+{
+  "Data Types": [
+    { "cmd": "int", "desc": "Integer type" },
+    { "cmd": "long long", "desc": "64 bit integer" },
+    { "cmd": "size_t", "desc": "Unsigned size type" },
+    { "cmd": "float", "desc": "Floating number" },
+    { "cmd": "double", "desc": "Double precision" },
+    { "cmd": "char", "desc": "Character" },
+    { "cmd": "bool", "desc": "Boolean" },
+    { "cmd": "string", "desc": "Text string" },
+    { "cmd": "auto", "desc": "Type deduction" }
+  ],
+  "Keywords": [
+    { "cmd": "constexpr", "desc": "Compile-time constant" },
+    { "cmd": "nullptr", "desc": "Null pointer" },
+    { "cmd": "const", "desc": "Immutable value" },
+    { "cmd": "inline", "desc": "Inline function" }
+  ],
+  "Control Flow": [
+    { "cmd": "if", "desc": "Conditional statement" },
+    { "cmd": "switch", "desc": "Switch statement" },
+    { "cmd": "for", "desc": "Loop" },
+    { "cmd": "while", "desc": "While loop" },
+    { "cmd": "do while", "desc": "Execute once then loop" }
+  ],
+  "STL Containers": [
+    { "cmd": "vector<T>", "desc": "Dynamic array" },
+    { "cmd": "array<T,N>", "desc": "Fixed array" },
+    { "cmd": "deque<T>", "desc": "Double-ended queue" },
+    { "cmd": "list<T>", "desc": "Doubly linked list" },
+    { "cmd": "map<K,V>", "desc": "Ordered map" },
+    { "cmd": "unordered_map", "desc": "Hash map" },
+    { "cmd": "set", "desc": "Unique sorted elements" },
+    { "cmd": "stack", "desc": "LIFO container" },
+    { "cmd": "queue", "desc": "FIFO container" }
+  ],
+  "Algorithms": [
+    { "cmd": "std::sort", "desc": "Sort range" },
+    { "cmd": "std::find", "desc": "Find element" },
+    { "cmd": "std::binary_search", "desc": "Check if element exists" },
+    { "cmd": "std::lower_bound", "desc": "First element >= value" },
+    { "cmd": "std::upper_bound", "desc": "First element > value" },
+    { "cmd": "std::max_element", "desc": "Find maximum element" },
+    { "cmd": "std::reverse", "desc": "Reverse container" },
+    { "cmd": "std::accumulate", "desc": "Sum elements" },
+    { "cmd": "std::count_if", "desc": "Count matching elements" },
+    { "cmd": "std::transform", "desc": "Apply function to range" }
+  ]
+}

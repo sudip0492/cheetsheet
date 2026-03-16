@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevSheets</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- SIDEBAR -->
+
+      <aside class="sidebar">
+        <div class="logo">💻 DevSheets</div>
+
+        <div class="menu-title">CHEAT SHEETS</div>
+
+        <div id="topic-list">
+          <div class="loading-text">Loading topics...</div>
+        </div>
+
+        <div class="theme">
+          <label>
+            <input type="checkbox" id="themeToggle" />
+            Dark Mode
+          </label>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+
+      <main class="content">
+        <header class="page-header">
+          <h1 id="title">Loading...</h1>
+        </header>
+
+        <input type="text" id="searchInput" placeholder="Search shortcuts..." disabled />
+
+        <div id="content"></div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
